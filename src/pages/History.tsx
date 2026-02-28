@@ -11,35 +11,35 @@ const filters = ["Region", "Sector", "First Partnered"];
 const historyRows: HistoryRow[] = [
   {
     year: "2015",
-    company: "Company Name1",
+    company: "Company Name",
     amount: "25Mn",
     description:
       "An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector. An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector.",
   },
   {
     year: "2016",
-    company: "Company Name1",
+    company: "Company Name",
     amount: "25Mn",
     description:
       "An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector. An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector.",
   },
   {
     year: "2016",
-    company: "Company Name1",
+    company: "Company Name",
     amount: "25Mn",
     description:
       "An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector. An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector.",
   },
   {
     year: "2016",
-    company: "Company Name1",
+    company: "Company Name",
     amount: "25Mn",
     description:
       "An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector. An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector.",
   },
   {
     year: "2017",
-    company: "Company Name1",
+    company: "Company Name",
     amount: "25Mn",
     description:
       "An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector. An Online marketplace designed to streamline B2B transactions in the speciality Chemical Sector.",
@@ -62,16 +62,33 @@ const History = () => {
         <div className="history-filters">
           {filters.map((filter) => (
             <button className="filter-pill" type="button" key={filter}>
-              {filter} <span className="chev">▾</span>
+              <span>{filter}</span>
+              <svg
+                className="chev"
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M1 1L5 5L9 1"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
           ))}
         </div>
 
         <div className="history-rows">
-          {historyRows.map((row) => (
+          {historyRows.map((row, index) => (
             <div
               className={`history-row ${row.muted ? "muted" : ""}`}
-              key={`${row.year}-${row.company}`}
+              key={`${row.year}-${row.company}-${index}`}
             >
               <div className="cell year">{row.year}</div>
               <div className="cell company">{row.company}</div>

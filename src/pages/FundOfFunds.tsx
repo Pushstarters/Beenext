@@ -34,7 +34,7 @@ const FundOfFunds = () => {
             <div className="fof-card-content">
               <h3>{card.title}</h3>
               <p>{card.description}</p>
-              <span className="fof-link">Learn more →</span>
+              <span className="fof-link">Learn more &rarr;</span>
             </div>
           </article>
         ))}
