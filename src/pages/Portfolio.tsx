@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 
 type PortfolioItem = {
   name: string;
@@ -542,6 +542,7 @@ const portfolioItems: PortfolioItem[] = [
 
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const total = portfolioItems.length;
   const activeItem = activeIndex !== null ? portfolioItems[activeIndex] : null;
   const goPrev = () => {
@@ -582,10 +583,24 @@ const Portfolio = () => {
             key={`${item.name}-${index}`}
             type="button"
             onClick={() => setActiveIndex(index)}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            onFocus={() => setHoveredIndex(index)}
+            onBlur={() => setHoveredIndex((current) => (current === index ? null : current))}
+            style={
+              {
+                "--portfolio-card-hover-bg": item.headerColor,
+              } as CSSProperties
+            }
           >
             <span
               className="logo-text"
-              dangerouslySetInnerHTML={{ __html: item.svg || item.name }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  hoveredIndex === index
+                    ? item.svgWhite || item.svg || item.name
+                    : item.svg || item.name,
+              }}
             />
           </button>
         ))}

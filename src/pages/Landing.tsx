@@ -1,38 +1,59 @@
-import { type KeyboardEvent, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const UNDERLINE_CYCLE_MS = 2500;
+const UNDERLINE_INTERVAL_MS = 20000;
 
 const Landing = () => {
   const [isUnderlineCycling, setIsUnderlineCycling] = useState(false);
   const underlineTimerRef = useRef<number | null>(null);
+  const underlineIntervalRef = useRef<number | null>(null);
+  const underlineFrameRef = useRef<number | null>(null);
 
-  useEffect(() => {
-    return () => {
-      if (underlineTimerRef.current !== null) {
-        window.clearTimeout(underlineTimerRef.current);
-      }
-    };
+  const triggerUnderlineCycle = useCallback(() => {
+    if (underlineTimerRef.current !== null) {
+      window.clearTimeout(underlineTimerRef.current);
+      underlineTimerRef.current = null;
+    }
+
+    if (underlineFrameRef.current !== null) {
+      window.cancelAnimationFrame(underlineFrameRef.current);
+      underlineFrameRef.current = null;
+    }
+
+    // Force class re-application so the CSS animation reliably restarts.
+    setIsUnderlineCycling(false);
+    underlineFrameRef.current = window.requestAnimationFrame(() => {
+      setIsUnderlineCycling(true);
+      underlineTimerRef.current = window.setTimeout(() => {
+        setIsUnderlineCycling(false);
+        underlineTimerRef.current = null;
+      }, UNDERLINE_CYCLE_MS);
+      underlineFrameRef.current = null;
+    });
   }, []);
 
-  const triggerUnderlineCycle = () => {
-    if (isUnderlineCycling) {
-      return;
-    }
+  useEffect(() => {
+    triggerUnderlineCycle();
+    underlineIntervalRef.current = window.setInterval(triggerUnderlineCycle, UNDERLINE_INTERVAL_MS);
 
-    setIsUnderlineCycling(true);
-    underlineTimerRef.current = window.setTimeout(() => {
-      setIsUnderlineCycling(false);
-      underlineTimerRef.current = null;
-    }, UNDERLINE_CYCLE_MS);
-  };
+    return () => {
+      if (underlineIntervalRef.current !== null) {
+        window.clearInterval(underlineIntervalRef.current);
+        underlineIntervalRef.current = null;
+      }
 
-  const handleUnderlineKeyDown = (event: KeyboardEvent<HTMLSpanElement>) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      triggerUnderlineCycle();
-    }
-  };
+      if (underlineTimerRef.current !== null) {
+        window.clearTimeout(underlineTimerRef.current);
+        underlineTimerRef.current = null;
+      }
+
+      if (underlineFrameRef.current !== null) {
+        window.cancelAnimationFrame(underlineFrameRef.current);
+        underlineFrameRef.current = null;
+      }
+    };
+  }, [triggerUnderlineCycle]);
 
   return (
     <div className="page-wrap">
@@ -47,11 +68,6 @@ const Landing = () => {
             Building India&apos;s most loved{" "}
             <span
               className={`underline ${isUnderlineCycling ? "underline--cycling" : ""}`}
-              role="button"
-              tabIndex={0}
-              onClick={triggerUnderlineCycle}
-              onKeyDown={handleUnderlineKeyDown}
-              aria-label="Animate underline"
             >
               <span className="underline-text">institutional seed platform.</span>
               <svg

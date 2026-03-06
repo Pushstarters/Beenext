@@ -1,19 +1,29 @@
-const fundCards = [
+type FundCard = {
+  title: string;
+  description: string;
+  variant: "deep" | "mid" | "light";
+  url: string;
+};
+
+const fundCards: FundCard[] = [
   {
     title: "Silicon Valley Spin-outs",
     description:
       "Backing teams commercializing frontier research from top Valley labs & institutions.",
     variant: "deep",
+    url: "#",
   },
   {
     title: "Specialist Managers",
     description: "Technical depth and niche excellence.",
     variant: "mid",
+    url: "#",
   },
   {
     title: "Operator turned VCs",
     description: "Backing first-time funds led by experienced operators.",
     variant: "light",
+    url: "#",
   },
 ];
 
@@ -34,7 +44,9 @@ const FundOfFunds = () => {
             <div className="fof-card-content">
               <h3>{card.title}</h3>
               <p>{card.description}</p>
-              <span className="fof-link">Learn more &rarr;</span>
+              <a className="fof-link" href={card.url} aria-label={`Learn more about ${card.title}`}>
+                Learn more &rarr;
+              </a>
             </div>
           </article>
         ))}

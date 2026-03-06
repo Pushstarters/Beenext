@@ -130,6 +130,7 @@ const Team = () => {
           >
             <div className="team-photo">
               <img src={member.image} alt={member.name} />
+              <span className="team-photo-name">{member.name}</span>
             </div>
           </button>
         ))}
