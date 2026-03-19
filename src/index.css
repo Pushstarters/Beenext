@@ -17,7 +17,7 @@
 
 body {
   margin: 0;
-  font-family: "Instrument Sans", "Segoe UI", sans-serif;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--navy-900);
 }
@@ -66,7 +66,7 @@ a {
 }
 
 .brand {
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 500;
   font-size: 22px;
   line-height: 100%;
@@ -77,7 +77,7 @@ a {
 .nav-links {
   display: flex;
   gap: 32px;
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 100%;
@@ -143,11 +143,11 @@ a {
 }
 
 .hero-inner {
-  max-width: 900px;
+  max-width: 950px;
 }
 
 .hero-title {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 84px;
   line-height: 100px;
@@ -158,7 +158,7 @@ a {
 }
 
 .hero-subtitle {
-  font-family: Poppins;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-style: Regular;
   font-size: 20px;
@@ -239,7 +239,7 @@ a {
   border: 0.5px solid #163b5b;
   border-radius: 10px;
   background: #ffffff;
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
@@ -268,7 +268,7 @@ a {
 }
 
 .bottom-left .label {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
@@ -290,7 +290,7 @@ a {
   color: #f1f1f1;
   padding: 15px 20px;
   border-radius: 10px;
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
@@ -299,7 +299,7 @@ a {
 }
 
 .footer-copy {
-  font-family: Poppins;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-style: Regular;
   font-size: 13px;
@@ -309,7 +309,7 @@ a {
 }
 
 .footer-link {
-  font-family: Poppins;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
@@ -373,7 +373,7 @@ a {
 }
 
 .history-title {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 65px;
   line-height: 100%;
@@ -383,7 +383,7 @@ a {
 }
 
 .history-subtitle {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -395,7 +395,7 @@ a {
   display: flex;
   gap: 28px;
   padding: 30px 0;
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -458,7 +458,7 @@ a {
   gap: 24px;
   padding: 18px 0;
   border-bottom: 1px solid #eef1f4;
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 16.17px;
@@ -545,7 +545,7 @@ a {
 }
 
 .team-title {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 300;
   font-size: 30px;
   line-height: 100%;
@@ -556,7 +556,7 @@ a {
 }
 
 .team-subtitle {
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-style: Regular;
   font-size: 16px;
@@ -620,7 +620,7 @@ a {
   position: absolute;
   left: 24px;
   bottom: 18px;
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 1;
@@ -710,7 +710,7 @@ a {
 }
 
 .drawer-title {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 24px;
@@ -728,7 +728,7 @@ a {
 
 .drawer-bio p {
   margin: 0 0 20px;
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -819,7 +819,7 @@ a {
 }
 
 .community-title {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 300;
   font-size: 30px;
   line-height: 100%;
@@ -829,7 +829,7 @@ a {
 }
 
 .community-subtitle {
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -1043,7 +1043,7 @@ a {
 }
 
 .portfolio-title {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 300;
   font-size: 30px;
   line-height: 100%;
@@ -1054,7 +1054,7 @@ a {
 }
 
 .portfolio-subtitle {
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -1073,7 +1073,7 @@ a {
 }
 
 .portfolio-pill {
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -1198,7 +1198,7 @@ a {
 
 .portfolio-modal-right h3 {
   margin: 0 0 27px;
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 21.14px;
   line-height: 100%;
@@ -1217,7 +1217,7 @@ a {
 }
 
 .modal-label {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 500;
   font-style: Medium;
   font-size: 12px;
@@ -1229,7 +1229,7 @@ a {
 }
 
 .modal-value {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
@@ -1315,7 +1315,7 @@ a {
 }
 
 .fof-title {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 300;
   font-size: 30px;
   line-height: 100%;
@@ -1326,7 +1326,7 @@ a {
 }
 
 .fof-subtitle {
-  font-family: Urbanist;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -1403,7 +1403,7 @@ a {
 }
 
 .fof-card-content h3 {
-  font-family: DM Sans;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 32px;
   line-height: 100%;
@@ -1412,7 +1412,7 @@ a {
 }
 
 .fof-card-content p {
-  font-family: "Urbanist", "Segoe UI", sans-serif;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-size: clamp(14px, 1vw, 18px);
   line-height: 1.5;
   margin: 0;
@@ -1428,7 +1428,7 @@ a {
 }
 
 .fof-link {
-  font-family: Inter;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 19.66px;
@@ -2007,7 +2007,7 @@ a {
     justify-content: center;
     text-align: center;
     gap: 5px;
-    font-family: DM Sans;
+    font-family: "Mona Sans", "Segoe UI", sans-serif;
     font-size: 12px;
     line-height: 1.2;
     color: #153a5b;
@@ -2026,7 +2026,7 @@ a {
   .history-row .year,
   .history-row .company,
   .history-row .amount {
-    font-family: DM Sans;
+    font-family: "Mona Sans", "Segoe UI", sans-serif;
     font-weight: 400;
     font-size: 21px;
     line-height: 1;
@@ -2040,7 +2040,7 @@ a {
   .history-row .desc {
     grid-column: 1 / -1;
     margin-top: 12px;
-    font-family: DM Sans;
+    font-family: "Mona Sans", "Segoe UI", sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.42;
