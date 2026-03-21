@@ -1,4 +1,12 @@
 import { useState } from "react";
+import aarushiImg from "../public/team/Aarushi.webp";
+import anirudhImg from "../public/team/anirudhgarg_img..webp";
+import devanshiImg from "../public/team/Devanshi-Photoroom.png";
+import nupurImg from "../public/team/Nupur.png";
+import piyushImg from "../public/team/Piyush.png";
+import sakshamImg from "../public/team/Saksham.webp";
+import teruImg from "../public/team/Teru.png";
+import yoshiImg from "../public/team/Yoshi-Photoroom.png";
 
 type TeamMember = {
   name: string;
@@ -10,98 +18,74 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Alex Mercer",
-    role: "Partner",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+    name: "Aarushi",
+    role: "Team Member",
+    image: aarushiImg,
     bio: [
-      "Alex is the Managing Partner at BeeGlobal Ventures and started the firm in 2012.",
-      "His active portfolio includes clean AI, applied climate, and digital infrastructure.",
-      "Alex received his B.S. in Electrical Engineering and Computer Science from MIT.",
+      "Aarushi is part of the core team at BeeGlobal Ventures.",
     ],
     linkedin: "https://www.linkedin.com",
   },
   {
-    name: "Riya Khanna",
-    role: "Principal",
-    image:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80",
+    name: "Anirudh Garg",
+    role: "Team Member",
+    image: anirudhImg,
     bio: [
-      "Riya leads founder partnerships and early talent networks across the firm.",
-      "Her portfolio spans marketplace and fintech infrastructure platforms.",
-      "She previously led product at a high-growth SaaS company.",
+      "Anirudh Garg is part of the core team at BeeGlobal Ventures.",
     ],
     linkedin: "https://www.linkedin.com",
   },
   {
-    name: "Omar Basu",
-    role: "Investor",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
+    name: "Devanshi",
+    role: "Team Member",
+    image: devanshiImg,
     bio: [
-      "Omar focuses on B2B commerce, logistics, and applied AI platforms.",
-      "He is passionate about operational scaling and zero-to-one execution.",
-      "Omar holds degrees in Industrial Engineering and Finance.",
+      "Devanshi is part of the core team at BeeGlobal Ventures.",
     ],
     linkedin: "https://www.linkedin.com",
   },
   {
-    name: "Nina Rao",
-    role: "Platform",
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+    name: "Nupur",
+    role: "Team Member",
+    image: nupurImg,
     bio: [
-      "Nina leads community, founder programs, and ecosystem partnerships.",
-      "She previously built operator networks across Southeast Asia.",
-      "Nina studied Organizational Psychology and Design.",
+      "Nupur is part of the core team at BeeGlobal Ventures.",
     ],
     linkedin: "https://www.linkedin.com",
   },
   {
-    name: "Aarav Mehta",
-    role: "Investor",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
+    name: "Piyush",
+    role: "Team Member",
+    image: piyushImg,
     bio: [
-      "Aarav supports diligence and works closely with portfolio leadership teams.",
-      "He specializes in go-to-market strategy and systems thinking.",
-      "Aarav is a former founder and operator.",
+      "Piyush is part of the core team at BeeGlobal Ventures.",
     ],
     linkedin: "https://www.linkedin.com",
   },
   {
-    name: "Isha Patel",
-    role: "Operations",
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+    name: "Saksham",
+    role: "Team Member",
+    image: sakshamImg,
     bio: [
-      "Isha runs finance, talent, and investor relations across the firm.",
-      "She leads BeeGlobal's founder care and portfolio services teams.",
-      "Isha holds an MBA in Strategy and Operations.",
+      "Saksham is part of the core team at BeeGlobal Ventures.",
     ],
     linkedin: "https://www.linkedin.com",
   },
   {
-    name: "David Lin",
-    role: "Partner",
-    image:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80",
+    name: "Teru",
+    role: "Team Member",
+    image: teruImg,
     bio: [
-      "David backs technical founders building category-defining platforms.",
-      "He previously founded a cybersecurity company acquired in 2021.",
-      "David holds a dual degree in Computer Science and Economics.",
+      "Teru is part of the core team at BeeGlobal Ventures.",
     ],
     linkedin: "https://www.linkedin.com",
   },
   {
-    name: "Ethan Wright",
-    role: "Principal",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+    name: "Yoshi",
+    role: "Team Member",
+    image: yoshiImg,
     bio: [
-      "Ethan leads seed investments across SaaS, fintech, and infrastructure.",
-      "He is a former growth lead at a global payments company.",
-      "Ethan holds a B.S. in Computer Engineering.",
+      "Yoshi is part of the core team at BeeGlobal Ventures.",
     ],
     linkedin: "https://www.linkedin.com",
   },
