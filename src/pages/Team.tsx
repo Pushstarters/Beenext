@@ -18,76 +18,60 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Aarushi",
-    role: "Team Member",
-    image: aarushiImg,
-    bio: [
-      "Aarushi is part of the core team at BeeGlobal Ventures.",
-    ],
-    linkedin: "https://www.linkedin.com",
-  },
-  {
     name: "Anirudh Garg",
     role: "Team Member",
     image: anirudhImg,
-    bio: [
-      "Anirudh Garg is part of the core team at BeeGlobal Ventures.",
-    ],
-    linkedin: "https://www.linkedin.com",
-  },
-  {
-    name: "Devanshi",
-    role: "Team Member",
-    image: devanshiImg,
-    bio: [
-      "Devanshi is part of the core team at BeeGlobal Ventures.",
-    ],
-    linkedin: "https://www.linkedin.com",
-  },
-  {
-    name: "Nupur",
-    role: "Team Member",
-    image: nupurImg,
-    bio: [
-      "Nupur is part of the core team at BeeGlobal Ventures.",
-    ],
-    linkedin: "https://www.linkedin.com",
-  },
-  {
-    name: "Piyush",
-    role: "Team Member",
-    image: piyushImg,
-    bio: [
-      "Piyush is part of the core team at BeeGlobal Ventures.",
-    ],
-    linkedin: "https://www.linkedin.com",
+    bio: ["Anirudh Garg is part of the core team at BeeGlobal Ventures."],
+    linkedin: "https://www.linkedin.com/in/anirudh-garg98/",
   },
   {
     name: "Saksham",
     role: "Team Member",
     image: sakshamImg,
-    bio: [
-      "Saksham is part of the core team at BeeGlobal Ventures.",
-    ],
-    linkedin: "https://www.linkedin.com",
+    bio: ["Saksham is part of the core team at BeeGlobal Ventures."],
+    linkedin: "https://www.linkedin.com/in/saksham-pant/",
   },
   {
     name: "Teru",
     role: "Team Member",
     image: teruImg,
-    bio: [
-      "Teru is part of the core team at BeeGlobal Ventures.",
-    ],
-    linkedin: "https://www.linkedin.com",
+    bio: ["Teru is part of the core team at BeeGlobal Ventures."],
+    linkedin: "https://www.linkedin.com/in/teruhidesato/",
   },
   {
     name: "Yoshi",
     role: "Team Member",
     image: yoshiImg,
-    bio: [
-      "Yoshi is part of the core team at BeeGlobal Ventures.",
-    ],
-    linkedin: "https://www.linkedin.com",
+    bio: ["Yoshi is part of the core team at BeeGlobal Ventures."],
+    linkedin: "https://www.linkedin.com/in/yoshi-okubo-65042929/",
+  },
+  {
+    name: "Aarushi",
+    role: "Team Member",
+    image: aarushiImg,
+    bio: ["Aarushi is part of the core team at BeeGlobal Ventures."],
+    linkedin: "https://www.linkedin.com/in/aarushisharmasrcc/",
+  },
+  {
+    name: "Devanshi",
+    role: "Team Member",
+    image: devanshiImg,
+    bio: ["Devanshi is part of the core team at BeeGlobal Ventures."],
+    linkedin: "https://www.linkedin.com/in/devanshi-kesaria-1b9a7128/",
+  },
+  {
+    name: "Nupur",
+    role: "Team Member",
+    image: nupurImg,
+    bio: ["Nupur is part of the core team at BeeGlobal Ventures."],
+    linkedin: "https://www.linkedin.com/in/nupur-kedia-796977110/",
+  },
+  {
+    name: "Piyush",
+    role: "Team Member",
+    image: piyushImg,
+    bio: ["Piyush is part of the core team at BeeGlobal Ventures."],
+    linkedin: "https://www.linkedin.com/in/piyush-agarwal-a8b338149/",
   },
 ];
 

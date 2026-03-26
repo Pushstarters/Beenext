@@ -1,80 +1,36 @@
 import { useEffect, useRef } from "react";
+import community01Img from "../public/community/community-01.jpg";
+import community02Img from "../public/community/community-02.jpg";
+import community03Img from "../public/community/community-03.jpg";
+import community04Img from "../public/community/community-04.jpg";
+import community05Img from "../public/community/community-05.jpg";
+import community06Img from "../public/community/community-06.jpeg";
+import community07Img from "../public/community/community-07.jpeg";
+import community08Img from "../public/community/community-08.jpeg";
 
 type CommunityImage = {
   src: string;
   layoutClass: string;
 };
 
-const communityImages: CommunityImage[] = [
-  {
-    src: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--1",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--2",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--3",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--4",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1531498860502-7c67cf02f657?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--5",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--6",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--7",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--8",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--9",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--10",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--11",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--12",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--13",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--14",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--15",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--16",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80",
-    layoutClass: "community-item--17",
-  },
+const communityPhotos = [
+  community01Img,
+  community02Img,
+  community03Img,
+  community04Img,
+  community05Img,
+  community06Img,
+  community07Img,
+  community08Img,
 ];
+
+const communityImages: CommunityImage[] = Array.from(
+  { length: 17 },
+  (_, index) => ({
+    src: communityPhotos[index % communityPhotos.length],
+    layoutClass: `community-item--${index + 1}`,
+  }),
+);
 
 const COMMUNITY_PAN_DURATION_SECONDS = 8;
 
@@ -142,7 +98,7 @@ const Community = () => {
               className={`community-item ${layoutClass}`}
               key={`${src}-${index}`}
             >
-              <img src={src} alt="Community moment" />
+              <img src={src} alt="Community moment" loading="lazy" />
             </div>
           ))}
         </div>
