@@ -1,12 +1,12 @@
 import { useState } from "react";
 import aarushiImg from "../public/team/Aarushi.webp";
-import anirudhImg from "../public/team/anirudhgarg_img..webp";
-import devanshiImg from "../public/team/Devanshi-Photoroom.png";
-import nupurImg from "../public/team/Nupur.png";
-import piyushImg from "../public/team/Piyush.png";
-import sakshamImg from "../public/team/Saksham.webp";
+import anirudhImg from "../public/team/anirudh.jpeg";
+import devanshiImg from "../public/team/devanshi.jpeg";
+import nupurImg from "../public/team/nupur.jpeg";
+import piyushImg from "../public/team/peeyush.png";
+import sakshamImg from "../public/team/saksham.jpeg";
 import teruImg from "../public/team/Teru.png";
-import yoshiImg from "../public/team/Yoshi-Photoroom.png";
+import yoshiImg from "../public/team/yoshi.jpeg";
 
 type TeamMember = {
   name: string;
