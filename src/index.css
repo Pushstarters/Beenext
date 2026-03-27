@@ -1117,18 +1117,62 @@ a {
   transition: background 180ms ease;
 }
 
-.portfolio-card:hover,
-.portfolio-card:focus-visible {
-  background: var(--portfolio-card-hover-bg, #f1f1f1);
+.portfolio-card-content {
+  width: 100%;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
 }
 
-.portfolio-card:hover .logo-text,
-.portfolio-card:focus-visible .logo-text {
-  color: #fff;
+.portfolio-card-brand,
+.portfolio-modal-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.portfolio-card .logo-text {
+.portfolio-card-brand {
+  min-height: 56px;
+}
+
+.portfolio-card-brand--image img,
+.portfolio-modal-brand--image img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.portfolio-card-brand--image img {
+  max-height: 56px;
+}
+
+.portfolio-card-brand--text,
+.portfolio-modal-brand--text {
+  text-align: center;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
+  font-weight: 600;
+  line-height: 1.12;
+  color: #173a63;
+}
+
+.portfolio-card-brand--text {
   font-size: 18px;
+}
+
+.portfolio-card-summary {
+  margin: 0;
+  max-width: 250px;
+  text-align: center;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #3c7eb4;
 }
 
 .portfolio-modal {
@@ -1194,6 +1238,35 @@ a {
   background: #ddf7f3;
   border-radius: 6px;
   min-height: 334px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.portfolio-modal-brand-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.portfolio-modal-brand--image img {
+  max-height: 112px;
+}
+
+.portfolio-modal-brand--text {
+  font-size: 30px;
+}
+
+.portfolio-modal-brand-name {
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #173a63;
 }
 
 .portfolio-modal-right h3 {
