@@ -602,39 +602,54 @@ a {
   transform: translateY(-1px);
 }
 
+.history-rows-header {
+  display: grid;
+  grid-template-columns: 180px 220px minmax(0, 1fr) 90px 120px;
+  gap: 24px;
+  padding: 12px 0;
+  background: #163b58;
+  color: #ffffff;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.history-rows-header-cell {
+    text-align: center;
+    padding: 0px 13px;
+}
+.cell.company {
+    padding-left: 20px;
+}
 .history-rows {
-  border-top: 1px solid #eef1f4;
   max-height: min(56vh, 420px);
   overflow-y: auto;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    #000 36px,
-    #000 calc(100% - 36px),
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    #000 36px,
-    #000 calc(100% - 36px),
-    transparent 100%
-  );
+  scrollbar-width: thin;
+  scrollbar-color: #163b58 #eef1f4;
+      overflow-x: hidden;
 }
 
 .history-rows::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+  width: 6px;
+}
+
+.history-rows::-webkit-scrollbar-track {
+  background: #eef1f4;
+}
+
+.history-rows::-webkit-scrollbar-thumb {
+  background: #163b58;
+  border-radius: 3px;
 }
 
 .history-row {
   display: grid;
-  grid-template-columns: 90px 180px 220px 120px minmax(0, 1fr);
+  grid-template-columns: 180px 220px minmax(0, 1fr) 90px 120px;
   gap: 24px;
   padding: 18px 0;
   border-bottom: 1px solid #eef1f4;
@@ -649,13 +664,29 @@ a {
   --history-row-opacity: 1;
   --history-row-blur: 0px;
   opacity: var(--history-row-opacity);
-  transform: translate3d(0, var(--history-parallax-y), 0);
+  transform: translate3d(0, var(--history-parallax-y), 0) scale(1);
   filter: blur(var(--history-row-blur));
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  background: transparent;
+  border-radius: 4px;
   transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), opacity 220ms ease,
-    filter 220ms ease;
+    filter 220ms ease, background 260ms ease, color 260ms ease;
   will-change: transform, opacity, filter;
+}
+
+.history-row:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #000;
+  transform: translate3d(0, var(--history-parallax-y), 0) scale(1.012);
+}
+.cell.year {
+    text-align: center;
+}
+.history-row:hover .cell,
+.history-row:hover .founders,
+.history-row:hover .amount {
+  color: #000;
 }
 
 .history-row .cell {
@@ -669,12 +700,19 @@ a {
   line-height: 1.35;
   text-transform: uppercase;
   color: #70859a;
+  text-align: left;
 }
-
+.history-row .cell {
+    color: #4b6176;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16.17px;
+    letter-spacing: 0px;
+    text-align: left;
+}
 .history-row .founders {
   text-align: left;
   color: #4b6176;
-  font-size: 14px;
   line-height: 1.45;
 }
 
@@ -793,22 +831,47 @@ a {
 }
 
 .team-photo {
-  position: relative;
-  width: 100%;
-  height: 439.14px;
-  border: 1px solid #e2e7ee;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #f4f6f9;
+    position: relative;
+    width: 100%;
+    height: 439.14px;
+    border-radius: 0;
+    overflow: hidden;
+    background: rgb(0 0 0 / 20%);
+    transition: background 600ms ease, border-color 600ms ease;
+    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%); */
+}
+
+.team-card:hover .team-photo,
+.team-card:focus-visible .team-photo {
+  background: #d6e4ef;
+  border-color: #b8cedf;
+}
+
+.team-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 250px 250px;
+  opacity: 0.45;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 600ms ease;
+}
+
+.team-card:hover .team-photo::before,
+.team-card:focus-visible .team-photo::before {
+  opacity: 0;
 }
 
 .team-photo::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.55) 100%);
+  /* background: linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.55) 100%); */
   opacity: 0;
-  transition: opacity 200ms ease;
+  transition: opacity 600ms ease;
   pointer-events: none;
 }
 
@@ -818,7 +881,7 @@ a {
   object-fit: cover;
   object-position: center top;
   filter: grayscale(100%);
-  transition: filter 200ms ease;
+  transition: filter 600ms ease;
 }
 
 .team-card:hover .team-photo img,
@@ -838,9 +901,9 @@ a {
   color: #ffffff;
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity 200ms ease, transform 200ms ease;
+  transition: opacity 600ms ease, transform 600ms ease;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .team-card:hover .team-photo::after,
@@ -917,12 +980,12 @@ a {
 }
 
 .drawer-media {
-  width: 241px;
-  height: 323px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.08);
-  overflow: hidden;
+    width: 241px;
+    height: 323px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
 }
 
 .drawer-media img {
@@ -946,7 +1009,7 @@ a {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 8px 0 0;
+  margin: 8px 0 13px 0;
 }
 
 .drawer-role {
@@ -1274,7 +1337,7 @@ a {
   letter-spacing: 0px;
   color: var(--navy-700);
   margin: 0 auto 48px;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .portfolio-filters {
@@ -1308,6 +1371,7 @@ a {
 
 .pill-count {
   opacity: 0.7;
+  font-size: 12px;
 }
 
 .portfolio-grid {
@@ -1408,6 +1472,8 @@ a {
   height: calc(84px * var(--portfolio-brand-scale, 1));
   transition: filter 500ms ease, background-color 500ms ease, transform 560ms
     cubic-bezier(0.22, 1, 0.36, 1);
+  max-width: 173px;
+  height: 90px;
 }
 
 .portfolio-card-brand--panel img,
@@ -1619,7 +1685,7 @@ a {
     )
   );
   border-radius: 8px;
-  min-height: 282px;
+  min-height: 334px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1664,7 +1730,10 @@ a {
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
+.portfolio-modal-header-brand--image img{
+  max-width: min(220px, 100%);
 
+}
 .portfolio-modal-header-brand--text {
   text-align: center;
   font-family: "Mona Sans", "Segoe UI", sans-serif;
@@ -1737,16 +1806,17 @@ a {
 }
 
 .portfolio-modal-right h3 {
-  margin: 0 0 26px;
-  font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.32;
-  letter-spacing: 0;
-  color: #171717;
-  max-width: 29ch;
+    margin: 0 0 26px;
+    font-family: "Mona Sans", "Segoe UI", sans-serif;
+    color: #000000;
+    /* max-width: 30ch; */
+    max-width: 100%;
+    font-weight: 400;
+    font-size: 21.14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 100%;
 }
-
 .portfolio-modal-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1758,19 +1828,19 @@ a {
 }
 
 .modal-label {
-  font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #666666;
-  margin-bottom: 4px;
+    font-family: "Mona Sans", "Segoe UI", sans-serif;
+    color: #606060;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
 }
 
 .modal-value {
   font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 13px;
   line-height: 1.35;
   letter-spacing: 0;
@@ -2094,8 +2164,14 @@ a {
     font-size: 14px;
   }
 
+  .history-rows-header {
+    grid-template-columns: 170px 105px minmax(0, 1fr) 80px auto;
+    gap: 16px;
+    font-size: 12px;
+  }
+
   .history-row {
-    grid-template-columns: 80px 170px 105px minmax(0, 1fr);
+    grid-template-columns: 170px 105px minmax(0, 1fr) 80px auto;
     gap: 16px;
     font-size: 14px;
     text-align: left;

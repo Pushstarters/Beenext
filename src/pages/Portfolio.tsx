@@ -291,7 +291,7 @@ const portfolioItems: PortfolioItem[] = [
     brandScale: 1.2,
     modalBrandScale: 1.08,
     modalTheme: {
-      header: "#202226",
+      header: "#8a6f8a",
       panel: "#f3f4f6",
       brandInk: "#181a1f",
       textInk: "#1f2933",

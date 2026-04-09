@@ -280,7 +280,7 @@ const History = () => {
           <label
             className={`filter-pill filter-pill--select${selectedRegion ? " filter-pill--active" : ""}`}
           >
-            <span>Region</span>
+            <span>Location</span>
             <svg
               className="chev"
               width="10"
@@ -314,6 +314,14 @@ const History = () => {
           </label>
         </div>
 
+        <div className="history-rows-header">
+          <div className="history-rows-header-cell">Company Name</div>
+          <div className="history-rows-header-cell">Founders</div>
+          <div className="history-rows-header-cell">Description</div>
+          <div className="history-rows-header-cell">Founding Year</div>
+          <div className="history-rows-header-cell">Location</div>
+        </div>
+
         <div
           className="history-rows"
           ref={rowsRef}
@@ -325,11 +333,11 @@ const History = () => {
         >
           {filteredRows.map((row, index) => (
             <div className="history-row" key={`${row.year}-${row.company}-${index}`}>
-              <div className="cell year">{row.year}</div>
               <div className="cell company">{row.company}</div>
               <div className="cell founders">{row.founders}</div>
-              <div className="cell amount">{row.region}</div>
               <div className="cell desc">{row.description}</div>
+              <div className="cell year">{row.year}</div>
+              <div className="cell amount">{row.region}</div>
             </div>
           ))}
           {filteredRows.length === 0 && (
