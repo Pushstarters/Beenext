@@ -23,7 +23,9 @@ const NavBar = () => {
   return (
     <nav className={`navbar ${isMenuOpen ? "nav-open" : ""}`}>
       <div className="nav-top">
-        <div className="brand">BeeGlobal</div>
+        <NavLink className="brand" to="/" end onClick={closeMenu}>
+          BeeGlobal
+        </NavLink>
         <button
           className={`nav-toggle ${isMenuOpen ? "open" : ""}`}
           type="button"
@@ -38,7 +40,7 @@ const NavBar = () => {
         </button>
       </div>
       <div className={`nav-links ${isMenuOpen ? "is-open" : ""}`} id="main-navigation">
-        <NavLink className={linkClass} to="/" onClick={closeMenu}>
+        <NavLink className={linkClass} to="/ethos" end onClick={closeMenu}>
           Ethos
         </NavLink>
         <NavLink className={linkClass} to="/history" onClick={closeMenu}>

@@ -10,9 +10,9 @@ const Footer = () => {
         </Link>
       </div>
       <div className="bottom-right">
-        <button className="contact-button" type="button">
+        <Link className="contact-button" to="/contact">
           CONTACT US
-        </button>
+        </Link>
         <div className="footer-copy">© 2026 BeeGlobal</div>
       </div>
     </footer>

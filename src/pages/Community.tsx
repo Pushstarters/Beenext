@@ -1,42 +1,109 @@
-import { useEffect, useRef } from "react";
-import community01Img from "../public/community/community-01.jpg";
-import community02Img from "../public/community/community-02.jpg";
-import community03Img from "../public/community/community-03.jpg";
-import community04Img from "../public/community/community-04.jpg";
-import community05Img from "../public/community/community-05.jpg";
-import community06Img from "../public/community/community-06.jpeg";
-import community07Img from "../public/community/community-07.jpeg";
-import community08Img from "../public/community/community-08.jpeg";
+import { CSSProperties, useEffect, useRef } from "react";
 
-type CommunityImage = {
-  src: string;
-  layoutClass: string;
+type CommunityLayout = {
+  colStart: number;
+  colSpan: number;
+  rowStart: number;
+  rowSpan: number;
 };
 
-const communityPhotos = [
-  community01Img,
-  community02Img,
-  community03Img,
-  community04Img,
-  community05Img,
-  community06Img,
-  community07Img,
-  community08Img,
+const COMMUNITY_PAN_DURATION_SECONDS = 8;
+const COMMUNITY_PATTERN_COLUMNS = 16;
+const COMMUNITY_PATTERN_WIDTH_PX = 1220;
+
+const communityAssets = import.meta.glob("../public/community/community-*.webp", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+const communityImageSources = Object.entries(communityAssets)
+  .sort(([left], [right]) =>
+    left.localeCompare(right, undefined, { numeric: true }),
+  )
+  .map(([, src]) => src);
+
+const COMMUNITY_LAYOUT_PATTERN: CommunityLayout[] = [
+  { colStart: 1, colSpan: 2, rowStart: 1, rowSpan: 7 },
+  { colStart: 3, colSpan: 4, rowStart: 1, rowSpan: 3 },
+  { colStart: 7, colSpan: 2, rowStart: 1, rowSpan: 3 },
+  { colStart: 9, colSpan: 2, rowStart: 1, rowSpan: 7 },
+  { colStart: 11, colSpan: 2, rowStart: 1, rowSpan: 7 },
+  { colStart: 13, colSpan: 2, rowStart: 1, rowSpan: 3 },
+  { colStart: 15, colSpan: 2, rowStart: 1, rowSpan: 3 },
+  { colStart: 1, colSpan: 2, rowStart: 8, rowSpan: 4 },
+  { colStart: 3, colSpan: 2, rowStart: 4, rowSpan: 8 },
+  { colStart: 5, colSpan: 4, rowStart: 4, rowSpan: 4 },
+  { colStart: 13, colSpan: 4, rowStart: 4, rowSpan: 4 },
+  { colStart: 5, colSpan: 2, rowStart: 8, rowSpan: 4 },
+  { colStart: 7, colSpan: 2, rowStart: 8, rowSpan: 4 },
+  { colStart: 9, colSpan: 2, rowStart: 8, rowSpan: 4 },
+  { colStart: 11, colSpan: 2, rowStart: 8, rowSpan: 4 },
+  { colStart: 13, colSpan: 2, rowStart: 8, rowSpan: 4 },
+  { colStart: 15, colSpan: 2, rowStart: 8, rowSpan: 4 },
 ];
 
-const communityImages: CommunityImage[] = Array.from(
-  { length: 17 },
-  (_, index) => ({
-    src: communityPhotos[index % communityPhotos.length],
-    layoutClass: `community-item--${index + 1}`,
-  }),
-);
-
-const COMMUNITY_PAN_DURATION_SECONDS = 8;
+const COMMUNITY_TRAILING_LAYOUTS: Record<
+  number,
+  { columns: number; pattern: CommunityLayout[] }
+> = {
+  6: {
+    columns: 8,
+    pattern: [
+      COMMUNITY_LAYOUT_PATTERN[0],
+      COMMUNITY_LAYOUT_PATTERN[1],
+      COMMUNITY_LAYOUT_PATTERN[2],
+      COMMUNITY_LAYOUT_PATTERN[8],
+      COMMUNITY_LAYOUT_PATTERN[9],
+      COMMUNITY_LAYOUT_PATTERN[7],
+    ],
+  },
+};
 
 const Community = () => {
   const gridShellRef = useRef<HTMLElement | null>(null);
   const gridRef = useRef<HTMLDivElement | null>(null);
+  const fullPatternCount = COMMUNITY_LAYOUT_PATTERN.length;
+  const fullGroups = Math.floor(communityImageSources.length / fullPatternCount);
+  const trailingCount = communityImageSources.length % fullPatternCount;
+  const trailingLayout = trailingCount
+    ? COMMUNITY_TRAILING_LAYOUTS[trailingCount] ?? {
+        columns: COMMUNITY_PATTERN_COLUMNS,
+        pattern: COMMUNITY_LAYOUT_PATTERN.slice(0, trailingCount),
+      }
+    : null;
+  const totalColumns =
+    fullGroups * COMMUNITY_PATTERN_COLUMNS + (trailingLayout?.columns ?? 0);
+  const totalWidthPx = Math.round(
+    (totalColumns / COMMUNITY_PATTERN_COLUMNS) * COMMUNITY_PATTERN_WIDTH_PX,
+  );
+  const panDurationSeconds = Math.max(
+    COMMUNITY_PAN_DURATION_SECONDS,
+    Math.round((totalColumns / COMMUNITY_PATTERN_COLUMNS) * 10),
+  );
+  const gridStyle = {
+    "--community-grid-columns": totalColumns,
+    "--community-grid-width": `${totalWidthPx}px`,
+  } as CSSProperties;
+
+  const communityImages = communityImageSources.map((src, index) => {
+    const isTrailingImage = trailingLayout !== null && index >= fullGroups * fullPatternCount;
+    const trailingIndex = index - fullGroups * fullPatternCount;
+    const pattern = isTrailingImage
+      ? trailingLayout.pattern[trailingIndex]
+      : COMMUNITY_LAYOUT_PATTERN[index % fullPatternCount];
+    const columnOffset = isTrailingImage
+      ? fullGroups * COMMUNITY_PATTERN_COLUMNS
+      : Math.floor(index / fullPatternCount) * COMMUNITY_PATTERN_COLUMNS;
+
+    return {
+      src,
+      alt: `Community moment ${index + 1}`,
+      style: {
+        gridColumn: `${pattern.colStart + columnOffset} / span ${pattern.colSpan}`,
+        gridRow: `${pattern.rowStart} / span ${pattern.rowSpan}`,
+      } as CSSProperties,
+    };
+  });
 
   useEffect(() => {
     const shell = gridShellRef.current;
@@ -51,7 +118,7 @@ const Community = () => {
       grid.style.setProperty("--community-pan-distance", `${panDistance}px`);
       grid.style.setProperty(
         "--community-pan-duration",
-        `${COMMUNITY_PAN_DURATION_SECONDS}s`,
+        `${panDurationSeconds}s`,
       );
       grid.classList.toggle("community-grid--animated", panDistance > 0);
     };
@@ -79,7 +146,7 @@ const Community = () => {
       );
       resizeObserver?.disconnect();
     };
-  }, []);
+  }, [panDurationSeconds]);
 
   return (
     <div className="community-page">
@@ -92,13 +159,16 @@ const Community = () => {
       </section>
 
       <section className="community-grid-shell" ref={gridShellRef}>
-        <div className="community-grid" ref={gridRef}>
-          {communityImages.map(({ src, layoutClass }, index) => (
-            <div
-              className={`community-item ${layoutClass}`}
-              key={`${src}-${index}`}
-            >
-              <img src={src} alt="Community moment" loading="lazy" />
+        <div className="community-grid" ref={gridRef} style={gridStyle}>
+          {communityImages.map(({ src, alt, style }, index) => (
+            <div className="community-item" key={`${src}-${index}`} style={style}>
+              <img
+                src={src}
+                alt={alt}
+                loading={index < 4 ? "eager" : "lazy"}
+                fetchPriority={index < 2 ? "high" : "auto"}
+                decoding="async"
+              />
             </div>
           ))}
         </div>
