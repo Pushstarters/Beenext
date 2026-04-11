@@ -704,7 +704,7 @@ a {
 }
 .history-row .cell {
     color: #4b6176;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 16px;
     line-height: 16.17px;
     letter-spacing: 0px;
@@ -2647,7 +2647,9 @@ a {
   .history-page {
     padding: 10px 10px 12px;
   }
-
+.hero-subtitle .underline {
+    align-items: center;
+}
   .history-hero {
     margin-bottom: 16px;
   }
