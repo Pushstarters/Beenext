@@ -1,11 +1,11 @@
 import { Fragment, useState } from "react";
 
-import aarushiImg from "../public/team/Aarushi-new.webp";
-import anirudhImg from "../public/team/anirudh-new.webp";
+import aarushiImg from "../public/team/Aarushi-new.png";
+import anirudhImg from "../public/team/anirudh-new.png";
 import devanshiImg from "../public/team/devanshi-new.png";
 import nupurImg from "../public/team/nupur-new.png";
-import piyushImg from "../public/team/piyush-new.png";
-import sakshamImg from "../public/team/saksham-new.webp";
+import piyushImg from "../public/team/piyush-new-bg.png";
+import sakshamImg from "../public/team/saksham-new.png";
 import teruImg from "../public/team/teru-new.png";
 import yoshiImg from "../public/team/yoshi-new.png";
 

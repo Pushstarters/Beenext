@@ -9,7 +9,7 @@ type CommunityLayout = {
 
 const COMMUNITY_PAN_DURATION_SECONDS = 8;
 const COMMUNITY_PATTERN_COLUMNS = 16;
-const COMMUNITY_PATTERN_WIDTH_PX = 1220;
+const COMMUNITY_PATTERN_WIDTH_PX = 1600;
 
 const communityAssets = import.meta.glob("../public/community/community-*.webp", {
   eager: true,

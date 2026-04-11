@@ -3,6 +3,7 @@ import {
   useEffect,
   useRef,
   useState,
+  type CSSProperties,
   type KeyboardEvent,
   type WheelEvent,
 } from "react";
@@ -16,6 +17,7 @@ type HistoryCsvRow = {
   foundedIn: string;
   location: string;
   sector: string;
+  url: string;
 };
 
 type HistoryRow = {
@@ -24,6 +26,7 @@ type HistoryRow = {
   founders: string;
   region: string;
   description: string;
+  url: string;
 };
 
 const WHEEL_DELTA_THRESHOLD = 45;
@@ -76,7 +79,7 @@ const parseHistoryCsv = (csvText: string): HistoryRow[] => {
 
   return dataLines
     .map((line) => {
-      const [company, founders, description, foundedIn, location, sector] =
+      const [company, founders, description, foundedIn, location, sector, url] =
         parseCsvLine(line);
 
       const row: HistoryCsvRow = {
@@ -86,6 +89,7 @@ const parseHistoryCsv = (csvText: string): HistoryRow[] => {
         foundedIn: sentenceCase(foundedIn),
         location: sentenceCase(location),
         sector: sentenceCase(sector),
+        url: (url ?? "").trim(),
       };
 
       return {
@@ -94,6 +98,7 @@ const parseHistoryCsv = (csvText: string): HistoryRow[] => {
         founders: row.founders,
         region: row.location,
         description: row.description,
+        url: row.url,
       };
     })
     .filter((row) => row.company && row.year);
@@ -102,6 +107,59 @@ const parseHistoryCsv = (csvText: string): HistoryRow[] => {
 const historyRows = parseHistoryCsv(historyCsv);
 const foundingYearOptions = [...new Set(historyRows.map((row) => row.year))];
 const regionOptions = [...new Set(historyRows.map((row) => row.region))];
+
+const COMPANY_ACCENT_COLORS: Record<string, string> = {
+  "NoBroker": "#fd3752",
+  "Servify": "#410099",
+  "Healthians": "#00a0a8",
+  "ShipRocket": "#735ae5",
+  "Cropin": "#410099",
+  "PropertyShare": "#112025",
+  "WorkIndia": "#33418a",
+  "Fyle.ai": "#1ada4d",
+  "Droom": "#eb7362",
+  "HackerEarth": "#384fdc",
+  "DailyRounds": "#950203",
+  "GetMyParking": "#23AD5E",
+  "Faasos": "#e84141",
+  "Idfy": "#1c43b9",
+  "Industrybuying.com": "#162f4d",
+  "CitrusPay": "#f7941d",
+  "Locus": "#003d82",
+  "Tracxn": "#0596d2",
+  "BharatPe": "#00b34d",
+  "Open": "#663399",
+  "Smallcase": "#0051ba",
+  "Mobile Premier League": "#ff3366",
+  "EasyDiner": "#ff3c3c",
+  "SafeGold": "#00bbb4",
+  "mFine": "#0095b6",
+  "Niramai": "#862452",
+  "Revv": "#1daba2",
+  "M2P Solutions": "#2563eb",
+  "M1Exchange": "#163b88",
+  "Fleetx": "#43997e",
+  "Skuad.io": "#0092f4",
+  "Appforbharat": "#f97316",
+  "Loadshare": "#051c57",
+  "Animall": "#15857c",
+  "Procol": "#1375e4",
+  "Winuall.com": "#ff6b00",
+  "Agnikul": "#e65c00",
+  "BlueSky Analytics": "#2563eb",
+  "Kenko Health": "#00b386",
+  "Lucidity": "#8aec64",
+  "IndiaFilings": "#2563eb",
+  "Driffle": "#9333ea",
+  "Fitbudd": "#4089f7",
+  "Zoplar": "#e02424",
+  "Bummer": "#f3c500",
+  "Scimplifi": "#2563eb",
+  "Furnishka": "#a0522d",
+  "Defendermate": "#1e3a5f",
+  "Axirium Aerospace": "#003366",
+  "Workspot": "#0693e3",
+};
 
 const History = () => {
   const [selectedYear, setSelectedYear] = useState("");
@@ -332,8 +390,24 @@ const History = () => {
           aria-label="Investment history timeline"
         >
           {filteredRows.map((row, index) => (
-            <div className="history-row" key={`${row.year}-${row.company}-${index}`}>
-              <div className="cell company">{row.company}</div>
+            <div
+              className="history-row"
+              key={`${row.year}-${row.company}-${index}`}
+              style={
+                COMPANY_ACCENT_COLORS[row.company]
+                  ? ({ "--row-accent": COMPANY_ACCENT_COLORS[row.company] } as CSSProperties)
+                  : undefined
+              }
+            >
+              <div className="cell company">
+                {row.url ? (
+                  <a href={row.url} target="_blank" rel="noopener noreferrer">
+                    {row.company}
+                  </a>
+                ) : (
+                  row.company
+                )}
+              </div>
               <div className="cell founders">{row.founders}</div>
               <div className="cell desc">{row.description}</div>
               <div className="cell year">{row.year}</div>
