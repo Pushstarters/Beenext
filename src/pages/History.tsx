@@ -301,7 +301,7 @@ const History = () => {
       <section className="history-table">
         <div className="history-filters">
           <label
-            className={`filter-pill filter-pill--select${selectedYear ? " filter-pill--active" : ""}`}
+            className={`filter-pill filter-pill--select history-filter history-filter--year${selectedYear ? " filter-pill--active" : ""}`}
           >
             <span>Founding Year</span>
             <svg
@@ -336,7 +336,7 @@ const History = () => {
             </select>
           </label>
           <label
-            className={`filter-pill filter-pill--select${selectedRegion ? " filter-pill--active" : ""}`}
+            className={`filter-pill filter-pill--select history-filter history-filter--location${selectedRegion ? " filter-pill--active" : ""}`}
           >
             <span>Location</span>
             <svg

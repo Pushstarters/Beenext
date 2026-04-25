@@ -1,8 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const { pathname } = useLocation();
+  const footerThemeClass =
+    pathname === "/contact"
+      ? "bottom-bar--contact"
+      : pathname === "/history"
+        ? "bottom-bar--history"
+        : "";
+
   return (
-    <footer className="bottom-bar">
+    <footer className={`bottom-bar ${footerThemeClass}`.trim()}>
       <div className="bottom-left">
         <div className="label">BUSINESS ENTITIES</div>
         <Link className="footer-link" to="/fund-of-funds">
