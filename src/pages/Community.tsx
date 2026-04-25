@@ -5,13 +5,14 @@ type CommunityLayout = {
   colSpan: number;
   rowStart: number;
   rowSpan: number;
+  objectPosition?: string;
 };
 
 const COMMUNITY_PAN_DURATION_SECONDS = 8;
-const COMMUNITY_PATTERN_COLUMNS = 16;
-const COMMUNITY_PATTERN_WIDTH_PX = 1600;
+const COMMUNITY_PATTERN_COLUMNS = 32;
+const COMMUNITY_PATTERN_WIDTH_PX = 1860;
 
-const communityAssets = import.meta.glob("../public/community/community-*.webp", {
+const communityAssets = import.meta.glob("../public/community/community-mosaic-*.jpg", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
@@ -23,59 +24,28 @@ const communityImageSources = Object.entries(communityAssets)
   .map(([, src]) => src);
 
 const COMMUNITY_LAYOUT_PATTERN: CommunityLayout[] = [
-  { colStart: 1, colSpan: 2, rowStart: 1, rowSpan: 7 },
-  { colStart: 3, colSpan: 4, rowStart: 1, rowSpan: 3 },
-  { colStart: 7, colSpan: 2, rowStart: 1, rowSpan: 3 },
-  { colStart: 9, colSpan: 2, rowStart: 1, rowSpan: 7 },
-  { colStart: 11, colSpan: 2, rowStart: 1, rowSpan: 7 },
-  { colStart: 13, colSpan: 2, rowStart: 1, rowSpan: 3 },
-  { colStart: 15, colSpan: 2, rowStart: 1, rowSpan: 3 },
-  { colStart: 1, colSpan: 2, rowStart: 8, rowSpan: 4 },
-  { colStart: 3, colSpan: 2, rowStart: 4, rowSpan: 8 },
-  { colStart: 5, colSpan: 4, rowStart: 4, rowSpan: 4 },
-  { colStart: 13, colSpan: 4, rowStart: 4, rowSpan: 4 },
-  { colStart: 5, colSpan: 2, rowStart: 8, rowSpan: 4 },
-  { colStart: 7, colSpan: 2, rowStart: 8, rowSpan: 4 },
-  { colStart: 9, colSpan: 2, rowStart: 8, rowSpan: 4 },
-  { colStart: 11, colSpan: 2, rowStart: 8, rowSpan: 4 },
-  { colStart: 13, colSpan: 2, rowStart: 8, rowSpan: 4 },
-  { colStart: 15, colSpan: 2, rowStart: 8, rowSpan: 4 },
+  { colStart: 1, colSpan: 4, rowStart: 1, rowSpan: 8, objectPosition: "center top" },
+  { colStart: 5, colSpan: 8, rowStart: 1, rowSpan: 4 },
+  { colStart: 13, colSpan: 6, rowStart: 1, rowSpan: 4 },
+  { colStart: 19, colSpan: 5, rowStart: 1, rowSpan: 4 },
+  { colStart: 24, colSpan: 5, rowStart: 1, rowSpan: 8, objectPosition: "center top" },
+  { colStart: 29, colSpan: 4, rowStart: 1, rowSpan: 4 },
+  { colStart: 5, colSpan: 5, rowStart: 5, rowSpan: 4 },
+  { colStart: 10, colSpan: 4, rowStart: 5, rowSpan: 4 },
+  { colStart: 14, colSpan: 4, rowStart: 5, rowSpan: 4 },
+  { colStart: 18, colSpan: 6, rowStart: 5, rowSpan: 4 },
+  { colStart: 29, colSpan: 4, rowStart: 5, rowSpan: 4 },
+  { colStart: 1, colSpan: 8, rowStart: 9, rowSpan: 4 },
+  { colStart: 9, colSpan: 8, rowStart: 9, rowSpan: 4 },
+  { colStart: 17, colSpan: 8, rowStart: 9, rowSpan: 4 },
+  { colStart: 25, colSpan: 8, rowStart: 9, rowSpan: 4 },
 ];
-
-const COMMUNITY_TRAILING_LAYOUTS: Record<
-  number,
-  { columns: number; pattern: CommunityLayout[] }
-> = {
-  6: {
-    columns: 8,
-    pattern: [
-      COMMUNITY_LAYOUT_PATTERN[0],
-      COMMUNITY_LAYOUT_PATTERN[1],
-      COMMUNITY_LAYOUT_PATTERN[2],
-      COMMUNITY_LAYOUT_PATTERN[8],
-      COMMUNITY_LAYOUT_PATTERN[9],
-      COMMUNITY_LAYOUT_PATTERN[7],
-    ],
-  },
-};
 
 const Community = () => {
   const gridShellRef = useRef<HTMLElement | null>(null);
   const gridRef = useRef<HTMLDivElement | null>(null);
-  const fullPatternCount = COMMUNITY_LAYOUT_PATTERN.length;
-  const fullGroups = Math.floor(communityImageSources.length / fullPatternCount);
-  const trailingCount = communityImageSources.length % fullPatternCount;
-  const trailingLayout = trailingCount
-    ? COMMUNITY_TRAILING_LAYOUTS[trailingCount] ?? {
-        columns: COMMUNITY_PATTERN_COLUMNS,
-        pattern: COMMUNITY_LAYOUT_PATTERN.slice(0, trailingCount),
-      }
-    : null;
-  const totalColumns =
-    fullGroups * COMMUNITY_PATTERN_COLUMNS + (trailingLayout?.columns ?? 0);
-  const totalWidthPx = Math.round(
-    (totalColumns / COMMUNITY_PATTERN_COLUMNS) * COMMUNITY_PATTERN_WIDTH_PX,
-  );
+  const totalColumns = COMMUNITY_PATTERN_COLUMNS;
+  const totalWidthPx = COMMUNITY_PATTERN_WIDTH_PX;
   const panDurationSeconds = Math.max(
     COMMUNITY_PAN_DURATION_SECONDS,
     Math.round((totalColumns / COMMUNITY_PATTERN_COLUMNS) * 10),
@@ -86,21 +56,15 @@ const Community = () => {
   } as CSSProperties;
 
   const communityImages = communityImageSources.map((src, index) => {
-    const isTrailingImage = trailingLayout !== null && index >= fullGroups * fullPatternCount;
-    const trailingIndex = index - fullGroups * fullPatternCount;
-    const pattern = isTrailingImage
-      ? trailingLayout.pattern[trailingIndex]
-      : COMMUNITY_LAYOUT_PATTERN[index % fullPatternCount];
-    const columnOffset = isTrailingImage
-      ? fullGroups * COMMUNITY_PATTERN_COLUMNS
-      : Math.floor(index / fullPatternCount) * COMMUNITY_PATTERN_COLUMNS;
+    const pattern = COMMUNITY_LAYOUT_PATTERN[index % COMMUNITY_LAYOUT_PATTERN.length];
 
     return {
       src,
       alt: `Community moment ${index + 1}`,
       style: {
-        gridColumn: `${pattern.colStart + columnOffset} / span ${pattern.colSpan}`,
+        gridColumn: `${pattern.colStart} / span ${pattern.colSpan}`,
         gridRow: `${pattern.rowStart} / span ${pattern.rowSpan}`,
+        "--community-object-position": pattern.objectPosition ?? "center center",
       } as CSSProperties,
     };
   });
