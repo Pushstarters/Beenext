@@ -21,6 +21,7 @@ const communityImageSources = Object.entries(communityAssets)
   .sort(([left], [right]) =>
     left.localeCompare(right, undefined, { numeric: true }),
   )
+  .filter(([path]) => !path.endsWith("community-mosaic-51.jpg"))
   .map(([, src]) => src);
 
 const COMMUNITY_LAYOUT_PATTERN: CommunityLayout[] = [
