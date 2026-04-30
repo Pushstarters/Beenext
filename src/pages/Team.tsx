@@ -1,12 +1,12 @@
 import { Fragment, useState } from "react";
 
-import aarushiImg from "../public/team/Aarushi-new.png";
-import anirudhImg from "../public/team/anirudh-new.png";
-import devanshiImg from "../public/team/devanshi-new.png";
-import nupurImg from "../public/team/nupur-new.png";
-import piyushImg from "../public/team/piyush-new-bg.png";
-import sakshamImg from "../public/team/saksham-new.png";
-import teruImg from "../public/team/teru-new.png";
+import sukhmaniImg from "../public/team/sukhmani-1.png";
+import anirudhImg from "../public/team/Anirudh-1.png";
+import devanshiImg from "../public/team/devanshi-1.png";
+import nupurImg from "../public/team/nupur-1.png";
+import piyushImg from "../public/team/piyush-1.png";
+import sakshamImg from "../public/team/saksham-1.png";
+import teruImg from "../public/team/teru-1.png";
 import yoshiImg from "../public/team/yoshi-new.png";
 
 type TeamMember = {
@@ -65,14 +65,14 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/yoshi-okubo-65042929/",
   },
   {
-    name: "Aarushi Sharma",
-    role: "VP, Investments",
-    image: aarushiImg,
+    name: "Sukhmani Singh",
+    role: "General Counsel",
+    image: sukhmaniImg,
     bullets: [
-      "Sector specialist: **Financial Services, SaaS and AI**",
-      "Ex-**investment** team at **Bertelsmann India Investments** (USD 500M fund)",
+      "General Counsel, BEENEXT",
+      "Ex- PE/VC and M&A Team at Khaitan & Co., Bangalore",
     ],
-    linkedin: "https://www.linkedin.com/in/aarushisharmasrcc/",
+    linkedin: "https://www.linkedin.com/in/sukhmani-singh-24413940/",
   },
   {
     name: "Devanshi Kesaria",

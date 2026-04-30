@@ -17,44 +17,69 @@ const communityAssets = import.meta.glob("../public/community/community-mosaic-*
   import: "default",
 }) as Record<string, string>;
 
-const communityImageSources = Object.entries(communityAssets)
+// Images sorted numerically (01–50, 51 excluded)
+const communityImageSourcesRaw = Object.entries(communityAssets)
   .sort(([left], [right]) =>
     left.localeCompare(right, undefined, { numeric: true }),
   )
   .filter(([path]) => !path.endsWith("community-mosaic-51.jpg"))
   .map(([, src]) => src);
 
+// Each image is matched to the cell with the closest aspect ratio (colSpan/rowSpan)
+// to minimise cover-crop. Within each AR bucket, images are stride-interleaved
+// across groups so sequentially-numbered photos (same shoot) don't cluster together.
+const COMMUNITY_IMAGE_ORDER = [
+  38,  7,  1, 45, 41, 42, 47, 34, 36,  44, 40, 10, 13, 17, 50, // group 0
+  8, 43, 14, 46, 21, 16, 48, 35, 37,  49, 4,  5,  15, 11, 18, // group 1
+  2,  9, 28, 24,  19, 20, 32, 3, 22,  6, 23, 12, 27, 25, 26, // group 2
+  39, 30, 31, 29, 33,                                           // trailing 5
+];
+
+const communityImageSources = COMMUNITY_IMAGE_ORDER.map(
+  (n) => communityImageSourcesRaw[n - 1],
+);
+
 const COMMUNITY_LAYOUT_PATTERN: CommunityLayout[] = [
-  { colStart: 1, colSpan: 4, rowStart: 1, rowSpan: 8, objectPosition: "center top" },
-  { colStart: 5, colSpan: 8, rowStart: 1, rowSpan: 4 },
-  { colStart: 13, colSpan: 6, rowStart: 1, rowSpan: 4 },
-  { colStart: 19, colSpan: 5, rowStart: 1, rowSpan: 4 },
-  { colStart: 24, colSpan: 5, rowStart: 1, rowSpan: 8, objectPosition: "center top" },
-  { colStart: 29, colSpan: 4, rowStart: 1, rowSpan: 4 },
-  { colStart: 5, colSpan: 5, rowStart: 5, rowSpan: 4 },
-  { colStart: 10, colSpan: 4, rowStart: 5, rowSpan: 4 },
-  { colStart: 14, colSpan: 4, rowStart: 5, rowSpan: 4 },
-  { colStart: 18, colSpan: 6, rowStart: 5, rowSpan: 4 },
-  { colStart: 29, colSpan: 4, rowStart: 5, rowSpan: 4 },
-  { colStart: 1, colSpan: 8, rowStart: 9, rowSpan: 4 },
-  { colStart: 9, colSpan: 8, rowStart: 9, rowSpan: 4 },
-  { colStart: 17, colSpan: 8, rowStart: 9, rowSpan: 4 },
-  { colStart: 25, colSpan: 8, rowStart: 9, rowSpan: 4 },
+  { colStart:  1, colSpan: 4, rowStart: 1, rowSpan: 8, objectPosition: "center center" }, // AR 0.50 — tall portrait cell
+  { colStart:  5, colSpan: 8, rowStart: 1, rowSpan: 4, objectPosition: "center top"    }, // AR 2.00 — wide, crop bottom
+  { colStart: 13, colSpan: 6, rowStart: 1, rowSpan: 4, objectPosition: "center center" }, // AR 1.50 — near-perfect match
+  { colStart: 19, colSpan: 5, rowStart: 1, rowSpan: 4, objectPosition: "center center" }, // AR 1.25
+  { colStart: 24, colSpan: 5, rowStart: 1, rowSpan: 8, objectPosition: "center center" }, // AR 0.63 — tall portrait cell
+  { colStart: 29, colSpan: 4, rowStart: 1, rowSpan: 4, objectPosition: "center center" }, // AR 1.00 — square
+  { colStart:  5, colSpan: 5, rowStart: 5, rowSpan: 4, objectPosition: "center center" }, // AR 1.25
+  { colStart: 10, colSpan: 4, rowStart: 5, rowSpan: 4, objectPosition: "center center" }, // AR 1.00 — square
+  { colStart: 14, colSpan: 4, rowStart: 5, rowSpan: 4, objectPosition: "center center" }, // AR 1.00 — square
+  { colStart: 18, colSpan: 6, rowStart: 5, rowSpan: 4, objectPosition: "center center" }, // AR 1.50 — near-perfect match
+  { colStart: 29, colSpan: 4, rowStart: 5, rowSpan: 4, objectPosition: "center center" }, // AR 1.00 — square
+  { colStart:  1, colSpan: 8, rowStart: 9, rowSpan: 4, objectPosition: "center top"    }, // AR 2.00 — wide, crop bottom
+  { colStart:  9, colSpan: 8, rowStart: 9, rowSpan: 4, objectPosition: "center top"    }, // AR 2.00 — wide, crop bottom
+  { colStart: 17, colSpan: 8, rowStart: 9, rowSpan: 4, objectPosition: "center top"    }, // AR 2.00 — wide, crop bottom
+  { colStart: 25, colSpan: 8, rowStart: 9, rowSpan: 4, objectPosition: "center top"    }, // AR 2.00 — wide, crop bottom
 ];
 
 const COMMUNITY_TRAILING_LAYOUTS: Record<
   number,
   { columns: number; pattern: CommunityLayout[] }
 > = {
+  5: {
+    columns: 12,
+    pattern: [
+      { colStart:  1, colSpan:  4, rowStart: 1, rowSpan: 8, objectPosition: "center center" }, // AR 0.50 — tall
+      { colStart:  5, colSpan:  4, rowStart: 1, rowSpan: 4, objectPosition: "center center" }, // AR 1.00
+      { colStart:  9, colSpan:  4, rowStart: 1, rowSpan: 4, objectPosition: "center center" }, // AR 1.00
+      { colStart:  5, colSpan:  8, rowStart: 5, rowSpan: 4, objectPosition: "center top"    }, // AR 2.00 — wide
+      { colStart:  1, colSpan: 12, rowStart: 9, rowSpan: 4, objectPosition: "center top"    }, // AR 3.00 — very wide
+    ],
+  },
   6: {
     columns: 16,
     pattern: [
-      { colStart: 1, colSpan: 4, rowStart: 1, rowSpan: 4 },
-      { colStart: 5, colSpan: 8, rowStart: 1, rowSpan: 8, objectPosition: "center top" },
-      { colStart: 13, colSpan: 4, rowStart: 1, rowSpan: 4 },
-      { colStart: 1, colSpan: 4, rowStart: 5, rowSpan: 4 },
-      { colStart: 13, colSpan: 4, rowStart: 5, rowSpan: 4 },
-      { colStart: 1, colSpan: 16, rowStart: 9, rowSpan: 4 },
+      { colStart:  1, colSpan:  4, rowStart: 1, rowSpan: 4, objectPosition: "center center" }, // AR 1.00
+      { colStart:  5, colSpan:  8, rowStart: 1, rowSpan: 8, objectPosition: "center center" }, // AR 1.00 — tall center
+      { colStart: 13, colSpan:  4, rowStart: 1, rowSpan: 4, objectPosition: "center center" }, // AR 1.00
+      { colStart:  1, colSpan:  4, rowStart: 5, rowSpan: 4, objectPosition: "center center" }, // AR 1.00
+      { colStart: 13, colSpan:  4, rowStart: 5, rowSpan: 4, objectPosition: "center center" }, // AR 1.00
+      { colStart:  1, colSpan: 16, rowStart: 9, rowSpan: 4, objectPosition: "center top"    }, // AR 4.00 — very wide
     ],
   },
 };
