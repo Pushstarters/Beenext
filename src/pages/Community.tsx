@@ -30,9 +30,9 @@ const communityImageSourcesRaw = Object.entries(communityAssets)
 // across groups so sequentially-numbered photos (same shoot) don't cluster together.
 const COMMUNITY_IMAGE_ORDER = [
   38,  7,  40, 47, 41, 42, 45, 34, 36,  44, 1, 10, 13, 17, 50, // group 0
-  8, 43, 14, 11, 21, 16, 48, 35, 37,  49, 4,  5,  15, 46, 18, // group 1
-  2,  9, 28, 24,  19, 33, 32, 3, 22,  6, 23, 12, 27, 25, 26, // group 2
-  39, 30, 31, 29, 20                                           // trailing 5
+  8, 43, 14, 11, 21, 2, 48, 35, 37,  49, 4,  5,  15, 46, 18, // group 1
+  16,  9, 28, 24,  19, 33, 39, 3, 22,  6, 23, 12, 27, 25, 26, // group 2
+  32, 30, 31, 29, 20                                           // trailing 5
 ];
 
 const communityImageSources = COMMUNITY_IMAGE_ORDER.map(
