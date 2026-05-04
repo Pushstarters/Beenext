@@ -925,6 +925,9 @@ a {
   line-height: 1;
   letter-spacing: 0;
   color: #ffffff;
+  background-color: #69818D;
+  padding: 6px 12px;
+  border-radius: 4px;
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 600ms ease, transform 600ms ease;
