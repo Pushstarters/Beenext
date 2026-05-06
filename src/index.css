@@ -1594,7 +1594,14 @@ a {
 .portfolio-modal-ghost-brand-image-icon {
   max-height: 72px;
   max-width: 110px;
+}
+
+.portfolio-modal-ghost-brand--invert .portfolio-modal-ghost-brand-image-icon {
   filter: brightness(0) invert(1);
+}
+
+.portfolio-modal-ghost-brand--invert .portfolio-modal-ghost-brand-line {
+  color: #ffffff;
 }
 
 .portfolio-card:hover .portfolio-card-brand-image-icon,
@@ -1903,7 +1910,7 @@ a {
   font-weight: 700;
   line-height: 1.12;
   font-size: calc(24px * var(--portfolio-brand-scale, 1));
-  color: var(--portfolio-modal-header-text, #ffffff);
+  color: var(--portfolio-modal-brand-ink, #132E35);
 }
 
 .portfolio-modal-right h3 {

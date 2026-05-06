@@ -33,6 +33,7 @@ type PortfolioItem = {
   brandLines?: string[];
   brandVariant?: "default" | "stacked";
   preserveColor?: boolean;
+  ghostBrandInvert?: boolean;
   cardBrandBackground?: string;
   cardHoverInk?: string;
   cardHoverLogoFilter?: string;
@@ -453,6 +454,7 @@ const portfolioItems: PortfolioItem[] = [
     name: "Telora",
     logo: teloraLogo,
     brandLines: ["Telora"],
+    ghostBrandInvert: true,
     brandScale: 1.18,
     modalBrandScale: 1.14,
     modalTheme: {
@@ -680,9 +682,10 @@ const renderBrand = (item: PortfolioItem, className: string) => {
   if (item.logo) {
     if (item.brandLines) {
       const lines = item.brandLines;
+      const invertClass = item.ghostBrandInvert && className === "portfolio-modal-ghost-brand" ? ` ${className}--invert` : "";
       return (
         <div
-          className={`${className} ${className}--combo-image${colorClass}${panelClass}`}
+          className={`${className} ${className}--combo-image${colorClass}${panelClass}${invertClass}`}
           style={brandStyle}
         >
           <img
