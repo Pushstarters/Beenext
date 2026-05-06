@@ -452,6 +452,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     name: "Telora",
     logo: teloraLogo,
+    brandLines: ["Telora"],
     brandScale: 1.18,
     modalBrandScale: 1.14,
     modalTheme: {
@@ -522,6 +523,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     name: "Reinforce Labs",
     logo: reinforceLabsLogo,
+    brandLines: ["Reinforce Labs"],
     brandScale: 1.34,
     modalBrandScale: 1.16,
     modalTheme: {
@@ -676,6 +678,30 @@ const renderBrand = (item: PortfolioItem, className: string) => {
   }
 
   if (item.logo) {
+    if (item.brandLines) {
+      const lines = item.brandLines;
+      return (
+        <div
+          className={`${className} ${className}--combo-image${colorClass}${panelClass}`}
+          style={brandStyle}
+        >
+          <img
+            className={`${className}-image-icon`}
+            src={item.logo}
+            alt=""
+            aria-hidden="true"
+            decoding="async"
+          />
+          <div className={`${className}-lines`}>
+            {lines.map((line) => (
+              <span className={`${className}-line`} key={`${item.name}-${line}`}>
+                {line}
+              </span>
+            ))}
+          </div>
+        </div>
+      );
+    }
     return (
       <div
         className={`${className} ${className}--image${colorClass}${panelClass}`}

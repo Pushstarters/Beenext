@@ -204,7 +204,7 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Angellist India":"#002D33",
   "Moneytap/ Freo":"#FC5106",
   "Jupiter + Amica":"#FC7A69",
-
+  "Crest":"#132E35",
 };
 
 const History = () => {
