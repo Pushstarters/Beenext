@@ -1594,7 +1594,11 @@ a {
 .portfolio-modal-ghost-brand-image-icon {
   max-height: 72px;
   max-width: 110px;
-  filter: none;
+  filter: brightness(0) invert(1);
+}
+
+.portfolio-modal-ghost-brand--combo-image .portfolio-modal-ghost-brand-line {
+  color: var(--portfolio-modal-header-text, #ffffff);
 }
 
 .portfolio-card:hover .portfolio-card-brand-image-icon,

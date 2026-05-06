@@ -456,10 +456,10 @@ const portfolioItems: PortfolioItem[] = [
     brandScale: 1.18,
     modalBrandScale: 1.14,
     modalTheme: {
-      header: "#204363",
-      panel: "#204363",
-      brandInk: "#204363",
-      textInk: "#1f3650",
+      header: "#000",
+      panel: "#000",
+      brandInk: "#ffff",
+      textInk: "#fff",
     },
     fallbackSummary: "-1 to 0 Accelerator for young startup founders",
     category: "Accelerator",
@@ -527,7 +527,7 @@ const portfolioItems: PortfolioItem[] = [
     brandScale: 1.34,
     modalBrandScale: 1.16,
     modalTheme: {
-      header: "#716a96",
+      header: "#132E35",
       panel: "#f1eff8",
       brandInk: "#544e74",
       textInk: "#3f3a57",
