@@ -527,10 +527,10 @@ const portfolioItems: PortfolioItem[] = [
     brandScale: 1.34,
     modalBrandScale: 1.16,
     modalTheme: {
-      header: "#132E35",
-      panel: "#132E35",
+      header: "#544e74",
+      panel: "#f1eff8",
       brandInk: "#544e74",
-      textInk: "#3f3a57",
+      textInk: "#544e74",
     },
     fallbackSummary: "AI enabled product vulnerability testing",
     category: "AI SaaS",

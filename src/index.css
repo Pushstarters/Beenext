@@ -1597,10 +1597,6 @@ a {
   filter: brightness(0) invert(1);
 }
 
-.portfolio-modal-ghost-brand--combo-image .portfolio-modal-ghost-brand-line {
-  color: var(--portfolio-modal-header-text, #ffffff);
-}
-
 .portfolio-card:hover .portfolio-card-brand-image-icon,
 .portfolio-card:focus-visible .portfolio-card-brand-image-icon {
   filter: var(--portfolio-card-hover-logo-filter, brightness(0) invert(1));
@@ -1899,6 +1895,15 @@ a {
   font-weight: 600;
   line-height: 1.1;
   color: var(--portfolio-modal-brand-ink, #132E35);
+}
+
+.portfolio-modal-ghost-brand-line {
+  display: block;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+  line-height: 1.12;
+  font-size: calc(24px * var(--portfolio-brand-scale, 1));
+  color: var(--portfolio-modal-header-text, #ffffff);
 }
 
 .portfolio-modal-right h3 {
