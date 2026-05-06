@@ -381,10 +381,10 @@ const portfolioItems: PortfolioItem[] = [
     brandScale: 1.24,
     modalBrandScale: 1.22,
     modalTheme: {
-      header: "#173a5b",
+      header: "#132E35",
       panel: "#eef4fb",
-      brandInk: "#173a5b",
-      textInk: "#173a5b",
+      brandInk: "#132E35",
+      textInk: "#132E35",
     },
     fallbackSummary: "Fractional family office for new age wealth",
     category: "Financial Services",
@@ -528,7 +528,7 @@ const portfolioItems: PortfolioItem[] = [
     modalBrandScale: 1.16,
     modalTheme: {
       header: "#132E35",
-      panel: "#f1eff8",
+      panel: "#132E35",
       brandInk: "#544e74",
       textInk: "#3f3a57",
     },
