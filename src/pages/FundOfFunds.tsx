@@ -2,28 +2,24 @@ type FundCard = {
   title: string;
   description: string;
   variant: "deep" | "mid" | "light";
-  url: string;
 };
 
 const fundCards: FundCard[] = [
   {
     title: "Silicon Valley Spin-outs",
     description:
-      "Backing teams commercializing frontier research from top Valley labs & institutions.",
+      "High-performing GPs launching independent funds after spinning out from major asset managers.",
     variant: "deep",
-    url: "#",
   },
   {
     title: "Specialist Managers",
-    description: "Technical depth and niche excellence.",
+    description: "GPs with deep technical expertise and a nuanced understanding of evolving technology shifts",
     variant: "mid",
-    url: "#",
   },
   {
     title: "Operator turned VCs",
-    description: "Backing first-time funds led by experienced operators.",
+    description: "First-time funds led by successful and experienced operators",
     variant: "light",
-    url: "#",
   },
 ];
 
@@ -33,8 +29,7 @@ const FundOfFunds = () => {
       <section className="fof-hero">
         <h1 className="fof-title">Bridging Asia to the West.</h1>
         <p className="fof-subtitle">
-          Backing cutting edge technology in the valley through funds and
-          co-investments.
+          Building and enabling a trusted platform to support seed fund managers globally.
         </p>
       </section>
 
@@ -44,9 +39,6 @@ const FundOfFunds = () => {
             <div className="fof-card-content">
               <h3>{card.title}</h3>
               <p>{card.description}</p>
-              <a className="fof-link" href={card.url} aria-label={`Learn more about ${card.title}`}>
-                Learn more &rarr;
-              </a>
             </div>
           </article>
         ))}

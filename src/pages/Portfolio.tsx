@@ -38,6 +38,7 @@ type PortfolioItem = {
   cardHoverInk?: string;
   cardHoverLogoFilter?: string;
   cardHoverPanelBackground?: string;
+  website?: string;
   modalTheme?: {
     header: string;
     panel: string;
@@ -262,6 +263,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: aixiriumLogo,
     brandScale: 1.48,
     modalBrandScale: 1.22,
+    website: "https://axirium.in",
     modalTheme: {
       header: "#131e54",
       panel: "#eef1fb",
@@ -276,6 +278,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: scimplifyLogo,
     brandScale: 1.2,
     modalBrandScale: 1.08,
+    website: "https://www.scimplify.com",
     modalTheme: {
       header: "#14b8a6",
       panel: "#e8fbf8",
@@ -291,6 +294,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: whizzoLogo,
     brandScale: 1.2,
     modalBrandScale: 1.08,
+    website: "https://www.whizzo.in",
     modalTheme: {
       header: "#8a6f8a",
       panel: "#f3f4f6",
@@ -305,6 +309,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: tractrixLogo,
     brandScale: 1.2,
     modalBrandScale: 1.22,
+    website: "https://www.tractrix.in",
     modalTheme: {
       header: "#f56263",
       panel: "#fff1f1",
@@ -321,6 +326,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: miniMinesLogo,
     brandScale: 1.16,
     modalBrandScale: 1.04,
+    website: "https://www.minimines.in",
     modalTheme: {
       header: "#71adba",
       panel: "#edf7f9",
@@ -335,6 +341,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: prosparityLogo,
     brandScale: 1.46,
     modalBrandScale: 1.2,
+    website: "https://www.prosparity.in",
     modalTheme: {
       header: "#79cc95",
       panel: "#eefaf2",
@@ -350,6 +357,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: kreditpeLogo,
     brandScale: 1.12,
     modalBrandScale: 1.04,
+    website: "https://www.kreditpe.com",
     modalTheme: {
       header: "#172c25",
       panel: "#eef5f1",
@@ -367,6 +375,7 @@ const portfolioItems: PortfolioItem[] = [
     modalBrandScale: 1.12,
     cardHoverLogoFilter: "grayscale(1) brightness(0) invert(1)",
     cardHoverPanelBackground: "rgba(255, 255, 255, 0.12)",
+    website: "https://ramp.com",
     modalTheme: {
       header: "#df1d24",
       panel: "#fff1f1",
@@ -381,6 +390,7 @@ const portfolioItems: PortfolioItem[] = [
     name: "Crest",
     brandScale: 1.24,
     modalBrandScale: 1.22,
+    website: "https://www.crestwm.com",
     modalTheme: {
       header: "#132E35",
       panel: "#eef4fb",
@@ -396,6 +406,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: ibcLogo,
     brandScale: 1.18,
     modalBrandScale: 1.08,
+    website: "https://www.intlbattery.com",
     modalTheme: {
       header: "#62e9c6",
       panel: "#e9fcf7",
@@ -411,6 +422,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: budyLogo,
     brandScale: 1.08,
     modalBrandScale: 1.04,
+    website: "https://www.budy.ai",
     modalTheme: {
       header: "#ffe356",
       panel: "#fffbea",
@@ -426,6 +438,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: flywlLogo,
     brandScale: 1.26,
     modalBrandScale: 1.1,
+    website: "https://www.flywl.com",
     modalTheme: {
       header: "#f8bc75",
       panel: "#fff5e8",
@@ -441,6 +454,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: gushworkLogo,
     brandScale: 1.24,
     modalBrandScale: 1.08,
+    website: "https://www.gushwork.com",
     modalTheme: {
       header: "#62a5fc",
       panel: "#edf4ff",
@@ -457,6 +471,7 @@ const portfolioItems: PortfolioItem[] = [
     ghostBrandInvert: true,
     brandScale: 1.18,
     modalBrandScale: 1.14,
+    website: "https://www.telora.co",
     modalTheme: {
       header: "#000",
       panel: "#000",
@@ -471,6 +486,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: furnishkaLogo,
     brandScale: 1.14,
     modalBrandScale: 1.04,
+    website: "https://www.furnishka.com",
     modalTheme: {
       header: "#f05b26",
       panel: "#fff2eb",
@@ -485,6 +501,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: firstCoffeeLogo,
     brandScale: 1.18,
     modalBrandScale: 1.06,
+    website: "https://www.firstcoffee.in",
     modalTheme: {
       header: "#6780e3",
       panel: "#eef2ff",
@@ -499,6 +516,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: defendermateLogo,
     brandScale: 1.18,
     modalBrandScale: 1.08,
+    website: "https://www.defendermate.com",
     modalTheme: {
       header: "#d392e1",
       panel: "#fcf1ff",
@@ -513,6 +531,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: elevnLogo,
     brandScale: 1.22,
     modalBrandScale: 1.08,
+    website: "https://www.elevnapp.com",
     modalTheme: {
       header: "#805bd7",
       panel: "#f4efff",
@@ -528,6 +547,7 @@ const portfolioItems: PortfolioItem[] = [
     brandLines: ["Reinforce Labs"],
     brandScale: 1.34,
     modalBrandScale: 1.16,
+    website: "https://www.reinforcelabs.ai",
     modalTheme: {
       header: "#544e74",
       panel: "#f1eff8",
@@ -545,6 +565,7 @@ const portfolioItems: PortfolioItem[] = [
     modalBrandScale: 1.16,
     cardHoverLogoFilter: "grayscale(1) brightness(0) invert(1)",
     cardHoverPanelBackground: "rgba(255, 255, 255, 0.12)",
+    website: "https://www.workspot.com",
     modalTheme: {
       header: "#6e95c5",
       panel: "#eef4fb",
@@ -562,6 +583,7 @@ const portfolioItems: PortfolioItem[] = [
     cardHoverInk: "#ffffff",
     cardHoverLogoFilter: "grayscale(1) brightness(0) invert(1)",
     cardHoverPanelBackground: "rgba(255, 255, 255, 0.12)",
+    website: "https://www.siriusai.com",
     modalTheme: {
       header: "#f27b25",
       panel: "#f8f3ee",
@@ -584,6 +606,7 @@ const portfolioItems: PortfolioItem[] = [
     cardHoverInk: "#ffffff",
     cardHoverLogoFilter: "none",
     cardHoverPanelBackground: "rgba(255, 255, 255, 0.12)",
+    website: "https://www.hotdata.ai",
     modalTheme: {
       header: "#5f7587",
       panel: "#6f8799",
@@ -857,10 +880,22 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="portfolio-modal-body">
-                <div className="portfolio-modal-left">
-                  <div className="portfolio-modal-brand-wrap portfolio-modal-brand-wrap--ghost">
-                    {renderBrand(activeItem, "portfolio-modal-ghost-brand")}
+                <div className="portfolio-modal-left-col">
+                  <div className="portfolio-modal-left">
+                    <div className="portfolio-modal-brand-wrap portfolio-modal-brand-wrap--ghost">
+                      {renderBrand(activeItem, "portfolio-modal-ghost-brand")}
+                    </div>
                   </div>
+                  {activeItem.website && (
+                    <a
+                      href={activeItem.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="portfolio-modal-company-link"
+                    >
+                      MORE ABOUT {activeItem.name.toUpperCase()} <span aria-hidden="true">→</span>
+                    </a>
+                  )}
                 </div>
                 <div className="portfolio-modal-right">
                   <h3>{activeItem.summary}</h3>

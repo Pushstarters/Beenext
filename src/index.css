@@ -66,12 +66,14 @@ a {
 }
 
 .brand {
-  font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  color: #132E35;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -79,7 +81,7 @@ a {
   gap: 32px;
   font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 100%;
   color: #132E35;
 }
@@ -644,7 +646,7 @@ a {
 
 .history-rows-header-cell {
     text-align: center;
-    padding: 0px 13px;
+    /* padding: 0px 13px; */
 }
 .cell.company {
     padding-left: 20px;
@@ -657,7 +659,8 @@ a {
   scroll-snap-type: y mandatory;
   scrollbar-width: thin;
   scrollbar-color: var(--history-accent) #eef1f4;
-      overflow-x: hidden;
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
 }
 
 .history-rows::-webkit-scrollbar {
@@ -726,7 +729,7 @@ a {
   line-height: 1.35;
   text-transform: uppercase;
   color: #132E35;
-  text-align: left;
+  text-align: center;
 }
 .history-row .cell {
     color: #132E35;
@@ -734,10 +737,10 @@ a {
     font-size: 16px;
     line-height: 16.17px;
     letter-spacing: 0px;
-    text-align: left;
+    text-align: center;
 }
 .history-row .founders {
-  text-align: left;
+  text-align: center;
   color: #132E35;
   line-height: 1.45;
 }
@@ -1070,7 +1073,7 @@ a {
   margin: 0;
   font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
   letter-spacing: 0px;
   color: rgba(237, 244, 251, 0.82);
@@ -1792,6 +1795,43 @@ a {
   border: none;
 }
 
+.portfolio-modal-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.portfolio-modal-company-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 18px;
+  background: var(--portfolio-modal-header-bg, #0d0d0d);
+  color: var(--portfolio-modal-header-text, #ffffff);
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: opacity 0.18s ease, transform 0.12s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portfolio-modal-company-link:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.portfolio-modal-company-link:active {
+  transform: translateY(0);
+}
+
 .portfolio-modal-brand-wrap {
   width: 100%;
   min-height: 100%;
@@ -2138,7 +2178,7 @@ a {
 
 .fof-card-content p {
   font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-size: clamp(14px, 1vw, 18px);
+  font-size: clamp(16px, 1vw, 18px);
   line-height: 1.5;
   margin: 0;
   opacity: 0;
@@ -2283,7 +2323,7 @@ a {
     grid-template-columns: 170px 105px minmax(0, 1fr) 128px 128px;
     gap: 16px;
     font-size: 14px;
-    text-align: left;
+    text-align: center;
   }
 
   .team-page {
@@ -2321,7 +2361,7 @@ a {
 
   .drawer-intro,
   .drawer-bio p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.45;
   }
 
@@ -2394,8 +2434,8 @@ a {
     display: inline-flex;
   }
 
-  .brand {
-    font-size: 20px;
+  .brand-logo {
+    height: 26px;
   }
 
   .nav-links {
@@ -2591,7 +2631,7 @@ a {
   }
 
   .history-row .cell {
-    text-align: left;
+    text-align: center;
   }
 
   .team-page {
@@ -2835,7 +2875,7 @@ a {
     grid-template-columns: 58px minmax(0, 1fr) auto;
     gap: 0 8px;
     padding: 16px 0 18px;
-    text-align: left;
+    text-align: center;
     transform: none;
     filter: none;
     opacity: 1;
@@ -3420,7 +3460,7 @@ a {
 }
 
 .ethos-founder-card-text {
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #44566c;
   line-height: 1.6;
   margin: 0;

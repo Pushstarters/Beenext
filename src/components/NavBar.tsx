@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import beeglobalLogo from "../public/beeglobal-logo.png";
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>
   isActive ? "nav-link active" : "nav-link";
@@ -24,7 +25,7 @@ const NavBar = () => {
     <nav className={`navbar ${isMenuOpen ? "nav-open" : ""}`}>
       <div className="nav-top">
         <NavLink className="brand" to="/" end onClick={closeMenu}>
-          BeeGlobal
+          <img src={beeglobalLogo} alt="BeeGlobal" className="brand-logo" />
         </NavLink>
         <button
           className={`nav-toggle ${isMenuOpen ? "open" : ""}`}
