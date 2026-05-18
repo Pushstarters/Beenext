@@ -263,7 +263,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: aixiriumLogo,
     brandScale: 1.48,
     modalBrandScale: 1.22,
-    website: "https://axirium.in",
+    website: "https://www.axirium.aero/",
     modalTheme: {
       header: "#131e54",
       panel: "#eef1fb",
@@ -326,7 +326,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: miniMinesLogo,
     brandScale: 1.16,
     modalBrandScale: 1.04,
-    website: "https://www.minimines.in",
+    website: "https://m-mines.com/",
     modalTheme: {
       header: "#71adba",
       panel: "#edf7f9",
@@ -390,7 +390,6 @@ const portfolioItems: PortfolioItem[] = [
     name: "Crest",
     brandScale: 1.24,
     modalBrandScale: 1.22,
-    website: "https://www.crestwm.com",
     modalTheme: {
       header: "#132E35",
       panel: "#eef4fb",
@@ -406,7 +405,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: ibcLogo,
     brandScale: 1.18,
     modalBrandScale: 1.08,
-    website: "https://www.intlbattery.com",
+    website: "https://www.ibcbatt.com/",
     modalTheme: {
       header: "#62e9c6",
       panel: "#e9fcf7",
@@ -454,7 +453,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: gushworkLogo,
     brandScale: 1.24,
     modalBrandScale: 1.08,
-    website: "https://www.gushwork.com",
+    website: "https://www.gushwork.ai/",
     modalTheme: {
       header: "#62a5fc",
       panel: "#edf4ff",
@@ -471,7 +470,7 @@ const portfolioItems: PortfolioItem[] = [
     ghostBrandInvert: true,
     brandScale: 1.18,
     modalBrandScale: 1.14,
-    website: "https://www.telora.co",
+    website: "https://telora.com/",
     modalTheme: {
       header: "#000",
       panel: "#000",
@@ -501,7 +500,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: firstCoffeeLogo,
     brandScale: 1.18,
     modalBrandScale: 1.06,
-    website: "https://www.firstcoffee.in",
+    website: "https://firstcoffee.co.in/",
     modalTheme: {
       header: "#6780e3",
       panel: "#eef2ff",
@@ -531,7 +530,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: elevnLogo,
     brandScale: 1.22,
     modalBrandScale: 1.08,
-    website: "https://www.elevnapp.com",
+    website: "https://www.elevncommunity.com/",
     modalTheme: {
       header: "#805bd7",
       panel: "#f4efff",
@@ -893,7 +892,7 @@ const Portfolio = () => {
                       rel="noopener noreferrer"
                       className="portfolio-modal-company-link"
                     >
-                      MORE ABOUT {activeItem.name.toUpperCase()} <span aria-hidden="true">→</span>
+                      Know more <span aria-hidden="true">→</span>
                     </a>
                   )}
                 </div>

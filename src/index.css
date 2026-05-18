@@ -71,8 +71,8 @@ a {
 }
 
 .brand-logo {
-  height: 32px;
-  width: auto;
+  width: 141.36px;
+  height: 20px;
   display: block;
 }
 
@@ -2459,7 +2459,8 @@ a {
   }
 
   .brand-logo {
-    height: 26px;
+    width: 141.36px;
+    height: 20px;
   }
 
   .nav-links {
