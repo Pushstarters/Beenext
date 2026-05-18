@@ -294,7 +294,7 @@ const portfolioItems: PortfolioItem[] = [
     logo: whizzoLogo,
     brandScale: 1.2,
     modalBrandScale: 1.08,
-    website: "https://www.whizzo.in",
+    website: "https://whizzo.org/",
     modalTheme: {
       header: "#8a6f8a",
       panel: "#f3f4f6",
