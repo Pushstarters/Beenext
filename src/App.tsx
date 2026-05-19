@@ -9,6 +9,7 @@ import Community from "./pages/Community";
 import Portfolio from "./pages/Portfolio";
 import FundOfFunds from "./pages/FundOfFunds";
 import Contact from "./pages/Contact";
+import Disclosure from "./pages/Disclosure";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/community" element={<Community />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/disclosure" element={<Disclosure />} />
           <Route path="/fund-of-funds" element={<FundOfFunds />} />
         </Routes>
       </main>
