@@ -378,7 +378,7 @@ a {
   margin: 0 0 16px;
   font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
-  font-size: 38px;
+  font-size: 48px;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #132e35;
@@ -425,7 +425,7 @@ a {
   display: flex;
   align-items: center;
   font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-size: 16px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -434,7 +434,7 @@ a {
 
 .disclosure-item-value {
   font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
   color: #132e35;
@@ -449,6 +449,9 @@ a {
 }
 
 @media (max-width: 600px) {
+  .disclosure-page{
+    padding: 20px 40px;
+  }
   .disclosure-title {
     font-size: 28px;
   }
@@ -459,6 +462,10 @@ a {
 
   .disclosure-item-value {
     font-size: 17px;
+  }
+
+  .disclosure-item--full{
+    width: 100%;
   }
 }
 
@@ -492,7 +499,7 @@ a {
   margin: 0;
   font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
-  font-size: 50px;
+  font-size: 48px;
   line-height: 100%;
   letter-spacing: -0.03em;
   color: var(--contact-accent);
@@ -2669,7 +2676,6 @@ a {
   }
 
   .contact-hero {
-    min-height: auto;
     padding: 44px 16px 52px;
   }
 
