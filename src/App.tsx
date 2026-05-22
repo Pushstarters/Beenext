@@ -10,6 +10,10 @@ import Portfolio from "./pages/Portfolio";
 import FundOfFunds from "./pages/FundOfFunds";
 import Contact from "./pages/Contact";
 import Disclosure from "./pages/Disclosure";
+import Grievance from "./pages/Grievance";
+import SeedPlatform from "./pages/SeedPlatform";
+import FounderFirst from "./pages/FounderFirst";
+import TransPacific from "./pages/TransPacific";
 
 const App = () => {
   return (
@@ -26,6 +30,10 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/disclosure" element={<Disclosure />} />
           <Route path="/fund-of-funds" element={<FundOfFunds />} />
+          <Route path="/grievance" element={<Grievance />} />
+          <Route path="/seed-platform" element={<SeedPlatform />} />
+          <Route path="/founder-first" element={<FounderFirst />} />
+          <Route path="/trans-pacific" element={<TransPacific />} />
         </Routes>
       </main>
       <Footer />

@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="bottom-right">
         <nav className="footer-nav">
           <Link className="footer-nav-link" to="/disclosure">DISCLOSURE</Link>
-          <a className="footer-nav-link" href="#">GRIEVANCE</a>
+          <Link className="footer-nav-link" to="/grievance">GRIEVANCE</Link>
           <Link className="footer-nav-link" to="/contact">CONTACT US</Link>
         </nav>
         <div className="footer-copy">© 2026 BeeGlobal</div>
