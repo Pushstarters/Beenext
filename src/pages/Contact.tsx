@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { CONTACT_EMAIL } from "../config/contact";
 
 const UNDERLINE_CYCLE_MS = 2500;
 const UNDERLINE_INTERVAL_MS = 5000;
@@ -84,7 +85,7 @@ const Contact = () => {
             Got a question, idea, or opportunity in mind? We&apos;d love to hear from you.
             Reach out and our team will get back to you shortly.
           </p>
-          <a className="contact-cta" href="mailto:hello@beeglobal.vc">
+          <a className="contact-cta" href={`mailto:${CONTACT_EMAIL}`}>
             <span>Email Us</span>
             <svg className="contact-cta-arrow" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M18.7167 5.04053V14.7637H13.7081V6.41724C13.1575 6.62086 10.1371 7.80073 8.78502 11.0063C7.30619 14.5121 9.01139 17.5848 9.2513 18H9.23971e-06C-0.00429683 14.4801 1.49668 11.1552 4.12892 8.72162C6.67442 6.36865 10.1027 5.04053 13.6724 5.04053H18.7167Z" fill="white"/>
