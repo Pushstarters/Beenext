@@ -1,0 +1,42 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - link "BeeGlobal" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "BeeGlobal" [ref=e7]
+    - generic [ref=e8]:
+      - link "Ethos" [ref=e9] [cursor=pointer]:
+        - /url: /ethos
+      - link "History" [ref=e10] [cursor=pointer]:
+        - /url: /history
+      - link "Team" [ref=e11] [cursor=pointer]:
+        - /url: /team
+      - link "Community" [ref=e12] [cursor=pointer]:
+        - /url: /community
+      - link "Portfolio" [ref=e13] [cursor=pointer]:
+        - /url: /portfolio
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Founder-First, Always" [level=1] [ref=e17]
+        - paragraph [ref=e18]: We back founders who know how to build — whether they've done it before or are doing it now.
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - heading "Execution Ready Operators" [level=2] [ref=e21]
+          - paragraph [ref=e22]: We back execution-ready operators who have operated at scale and possess deep sector familiarity to be able to restart from scratch
+        - generic [ref=e23]:
+          - heading "Category creators" [level=2] [ref=e24]
+          - paragraph [ref=e25]: We also back young founders who are creating new categories where incumbents don't exist or are mispositioned.
+  - contentinfo [ref=e26]:
+    - generic [ref=e27]:
+      - generic [ref=e28]: BUSINESS ENTITIES
+      - link "Fund of Funds" [ref=e29] [cursor=pointer]:
+        - /url: /fund-of-funds
+    - generic [ref=e30]:
+      - navigation [ref=e31]:
+        - link "DISCLOSURE" [ref=e32] [cursor=pointer]:
+          - /url: /disclosure
+        - link "GRIEVANCE" [ref=e33] [cursor=pointer]:
+          - /url: /grievance
+        - link "CONTACT US" [ref=e34] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e35]: © 2026 BeeGlobal
