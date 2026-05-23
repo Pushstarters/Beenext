@@ -1039,6 +1039,11 @@ a {
 
 .team-page {
   padding: 50px 33px 0;
+  cursor: url('/cursorlogolight.png') 12 12, auto;
+}
+
+.team-page *:active {
+  cursor: url('/cursorlogodark.png') 12 12, auto;
 }
 
 .team-hero {
@@ -1085,7 +1090,7 @@ a {
   width: 100%;
   max-width: 332.18px;
   padding: 0;
-  cursor: pointer;
+  cursor: url('/cursorlogolight.png') 12 12, pointer;
   text-align: left;
 }
 
@@ -1100,6 +1105,10 @@ a {
     background 600ms ease,
     border-color 600ms ease;
   /* background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%); */
+}
+
+.team-card:active {
+  cursor: url('/cursorlogodark.png') 12 12, pointer;
 }
 
 .team-card:hover .team-photo,
