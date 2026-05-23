@@ -48,13 +48,14 @@ type PortfolioItem = {
     textInk?: string;
   };
   fallbackSummary: string;
-  category:
-    | "AI SaaS"
+  category: Array<
+    | "AI"
     | "Financial Services"
-    | "Industry 2.0"
+    | "B2B/Manufacturing"
     | "Consumer Economy"
     | "DeepTech"
-    | "Accelerator";
+    | "Accelerator"
+  >;
 };
 
 type PortfolioCsvRecord = {
@@ -271,7 +272,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#1a2430",
     },
     fallbackSummary: "Aerospace manufacturing & engineering services",
-    category: "Industry 2.0",
+    category: ["B2B/Manufacturing", "DeepTech"],
   },
   {
     name: "Scimplify",
@@ -287,7 +288,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#134e4a",
     },
     fallbackSummary: "Speciality chemicals sourcing platform",
-    category: "Industry 2.0",
+    category: ["B2B/Manufacturing", "DeepTech"],
   },
   {
     name: "Whizzo",
@@ -302,7 +303,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#1f2933",
     },
     fallbackSummary: "Technical textiles sourcing platform",
-    category: "Industry 2.0",
+    category: ["B2B/Manufacturing", "DeepTech"],
   },
   {
     name: "Tractrix",
@@ -318,7 +319,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#6f2425",
     },
     fallbackSummary: "Optical surveillance solutions for Defence",
-    category: "DeepTech",
+    category: ["DeepTech"],
   },
   {
     name: "MINI MINES",
@@ -334,7 +335,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#2f5f69",
     },
     fallbackSummary: "EV battery recycling",
-    category: "DeepTech",
+    category: ["DeepTech", "B2B/Manufacturing"],
   },
   {
     name: "ProsParity",
@@ -349,7 +350,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#2f6843",
     },
     fallbackSummary: "EV financing solutions",
-    category: "Financial Services",
+    category: ["Financial Services"],
   },
   {
     name: "KreditPe",
@@ -366,7 +367,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#21372f",
     },
     fallbackSummary: "Secured credit cards for new to credit customers",
-    category: "Financial Services",
+    category: ["Financial Services"],
   },
   {
     name: "Ramp",
@@ -384,7 +385,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#621a1d",
     },
     fallbackSummary: "Integrated corporate card and spend management platform",
-    category: "Financial Services",
+    category: ["AI"],
   },
   {
     name: "Crest",
@@ -397,7 +398,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#132E35",
     },
     fallbackSummary: "Fractional family office for new age wealth",
-    category: "Financial Services",
+    category: ["Financial Services"],
   },
   {
     name: "International Battery Company",
@@ -413,7 +414,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#1d4f46",
     },
     fallbackSummary: "Li-ion cell gigafactory",
-    category: "DeepTech",
+    category: ["DeepTech", "B2B/Manufacturing"],
   },
   {
     name: "budy",
@@ -429,7 +430,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#4f3f00",
     },
     fallbackSummary: "AI co-pilot for Senior Living Sales teams",
-    category: "AI SaaS",
+    category: ["AI"],
   },
   {
     name: "Flywl",
@@ -445,7 +446,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#875c24",
     },
     fallbackSummary: "Meta marketplace for buying cloud software",
-    category: "AI SaaS",
+    category: ["AI"],
   },
   {
     name: "gushwork",
@@ -461,7 +462,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#1f4f8e",
     },
     fallbackSummary: "AI growth agents for digital SMBs",
-    category: "AI SaaS",
+    category: ["AI"],
   },
   {
     name: "Telora",
@@ -478,7 +479,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#fff",
     },
     fallbackSummary: "-1 to 0 Accelerator for young startup founders",
-    category: "Accelerator",
+    category: ["Accelerator"],
   },
   {
     name: "Furnishka",
@@ -493,7 +494,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#78350f",
     },
     fallbackSummary: "Value retail chain for furniture",
-    category: "Consumer Economy",
+    category: ["Consumer Economy"],
   },
   {
     name: "First Coffee",
@@ -508,7 +509,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#2c418e",
     },
     fallbackSummary: "Specialty coffee retail chain targeting young urban consumers",
-    category: "Consumer Economy",
+    category: ["Consumer Economy"],
   },
   {
     name: "Defendermate",
@@ -523,7 +524,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#6b3f75",
     },
     fallbackSummary: "AI powered security teammates",
-    category: "AI SaaS",
+    category: ["AI"],
   },
   {
     name: "Elevn",
@@ -538,7 +539,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#4d3c75",
     },
     fallbackSummary: "Women first dating & experiences app",
-    category: "Consumer Economy",
+    category: ["Consumer Economy"],
   },
   {
     name: "Reinforce Labs",
@@ -554,7 +555,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#544e74",
     },
     fallbackSummary: "AI enabled product vulnerability testing",
-    category: "AI SaaS",
+    category: ["AI"],
   },
   {
     name: "Workspot.",
@@ -572,7 +573,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#21415f",
     },
     fallbackSummary: "Enterprise-class SaaS cloud desktop solutions",
-    category: "AI SaaS",
+    category: ["AI"],
   },
   {
     name: "SiriusAI",
@@ -592,7 +593,7 @@ const portfolioItems: PortfolioItem[] = [
     },
     fallbackSummary:
       "AI-first consulting and solutions company focused on financial services",
-    category: "AI SaaS",
+    category: ["AI"],
   },
   {
     name: "Hotdata",
@@ -613,14 +614,14 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#1e3a50",
     },
     fallbackSummary: "Real time Query Engine for AI Agents",
-    category: "AI SaaS",
+    category: ["AI"],
   },
 ];
 
-const categoryOrder: Array<PortfolioItem["category"]> = [
-  "AI SaaS",
+const categoryOrder: Array<NonNullable<PortfolioItem["category"][number]>> = [
+  "AI",
   "Financial Services",
-  "Industry 2.0",
+  "B2B/Manufacturing",
   "Consumer Economy",
   "DeepTech",
   "Accelerator",
@@ -745,7 +746,7 @@ const renderBrand = (item: PortfolioItem, className: string) => {
 };
 
 const Portfolio = () => {
-  const [activeCategory, setActiveCategory] = useState<"All" | PortfolioItem["category"]>(
+  const [activeCategory, setActiveCategory] = useState<"All" | PortfolioItem["category"][number]>(
     "All"
   );
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -753,13 +754,13 @@ const Portfolio = () => {
     { label: "All" as const, count: resolvedPortfolioItems.length },
     ...categoryOrder.map((label) => ({
       label,
-      count: resolvedPortfolioItems.filter((item) => item.category === label).length,
+      count: resolvedPortfolioItems.filter((item) => item.category.includes(label)).length,
     })),
   ];
   const filteredItems =
     activeCategory === "All"
       ? resolvedPortfolioItems
-      : resolvedPortfolioItems.filter((item) => item.category === activeCategory);
+      : resolvedPortfolioItems.filter((item) => item.category.includes(activeCategory));
   const total = filteredItems.length;
   const activeItem = activeIndex !== null ? filteredItems[activeIndex] : null;
   const modalStyle = activeItem
@@ -780,7 +781,7 @@ const Portfolio = () => {
       } as CSSProperties)
     : undefined;
 
-  const handleCategoryChange = (category: "All" | PortfolioItem["category"]) => {
+  const handleCategoryChange = (category: "All" | PortfolioItem["category"][number]) => {
     setActiveCategory(category);
     setActiveIndex(null);
   };
