@@ -16,23 +16,35 @@ const TransPacific = () => (
       </p>
     </div>
     <div className="transpac-map">
-      <ComposableMap projection="geoNaturalEarth1" width={900} height={440}>
+      <ComposableMap
+        projection="geoNaturalEarth1"
+        width={960}
+        height={500}
+        projectionConfig={{ scale: 165, center: [0, 30] }}
+      >
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
-            geographies.map((geo) => (
-              <Geography
-                key={geo.rsmKey}
-                geography={geo}
-                fill={HIGHLIGHTED.has(String(geo.id)) ? "#163b58" : "#dce8f0"}
-                stroke="#ffffff"
-                strokeWidth={0.5}
-                style={{
-                  default: { outline: "none" },
-                  hover:   { outline: "none" },
-                  pressed: { outline: "none" },
-                }}
-              />
-            ))
+            geographies.map((geo) => {
+              const isHighlighted = HIGHLIGHTED.has(String(geo.id));
+              return (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  fill={isHighlighted ? "#6b8fa0" : "transparent"}
+                  stroke={isHighlighted ? "#6b8fa0" : "#c8d5dc"}
+                  strokeWidth={0.5}
+                  style={{
+                    default: { outline: "none" },
+                    hover: {
+                      fill: isHighlighted ? "#9ab8c8" : "transparent",
+                      outline: "none",
+                      cursor: isHighlighted ? "pointer" : "default",
+                    },
+                    pressed: { outline: "none" },
+                  }}
+                />
+              );
+            })
           }
         </Geographies>
       </ComposableMap>

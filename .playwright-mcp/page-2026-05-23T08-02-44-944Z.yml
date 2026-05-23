@@ -1,0 +1,36 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - link "BeeGlobal" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "BeeGlobal" [ref=e7]
+    - generic [ref=e8]:
+      - link "Ethos" [ref=e9] [cursor=pointer]:
+        - /url: /ethos
+      - link "History" [ref=e10] [cursor=pointer]:
+        - /url: /history
+      - link "Team" [ref=e11] [cursor=pointer]:
+        - /url: /team
+      - link "Community" [ref=e12] [cursor=pointer]:
+        - /url: /community
+      - link "Portfolio" [ref=e13] [cursor=pointer]:
+        - /url: /portfolio
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic:
+        - heading "The Trans-Pacific Bridge" [level=1]
+        - paragraph: This is our Alpha! We leverage deep Japanese roots to help Indian builders scale into Japan, Korea, and Taiwan, while serving as a trusted partner for East Asian LPs looking for a sophisticated entry into India's early-stage DNA.
+      - img [ref=e17]
+  - contentinfo [ref=e196]:
+    - generic [ref=e197]:
+      - generic [ref=e198]: BUSINESS ENTITIES
+      - link "Fund of Funds" [ref=e199] [cursor=pointer]:
+        - /url: /fund-of-funds
+    - generic [ref=e200]:
+      - navigation [ref=e201]:
+        - link "DISCLOSURE" [ref=e202] [cursor=pointer]:
+          - /url: /disclosure
+        - link "GRIEVANCE" [ref=e203] [cursor=pointer]:
+          - /url: /grievance
+        - link "CONTACT US" [ref=e204] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e205]: © 2026 BeeGlobal

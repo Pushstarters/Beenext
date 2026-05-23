@@ -1,0 +1,51 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - link "BeeGlobal" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "BeeGlobal" [ref=e7]
+    - generic [ref=e8]:
+      - link "Ethos" [ref=e9] [cursor=pointer]:
+        - /url: /ethos
+      - link "History" [ref=e10] [cursor=pointer]:
+        - /url: /history
+      - link "Team" [ref=e11] [cursor=pointer]:
+        - /url: /team
+      - link "Community" [ref=e12] [cursor=pointer]:
+        - /url: /community
+      - link "Portfolio" [ref=e13] [cursor=pointer]:
+        - /url: /portfolio
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "A partnership built on Empathy, Experience and Execution" [level=1] [ref=e17]
+        - paragraph [ref=e18]:
+          - text: For nearly a decade at BEENEXT, we have been quiet students and active partners in the India growth story. We chose to listen first, learn deeply, and build conviction through proximity. Almost
+          - strong [ref=e19]: 70%
+          - text: of our capital has flowed into Indian startups – not by strategy alone, but because this is where we consistently found the world's most ambitious builders. India's founders shaped us as much as we have supported them. Our ethos was forged on the ground, in the trenches, with the people who are rewriting what's possible.
+      - generic [ref=e20]:
+        - link "The Institutional Seed Platform" [ref=e21] [cursor=pointer]:
+          - /url: /seed-platform
+          - generic [ref=e22]: The Institutional Seed Platform
+          - img [ref=e24]
+        - link "Founder-First, Always" [ref=e27] [cursor=pointer]:
+          - /url: /founder-first
+          - generic [ref=e28]: Founder-First, Always
+          - img [ref=e30]
+        - link "The Trans-Pacific Bridge" [ref=e33] [cursor=pointer]:
+          - /url: /trans-pacific
+          - generic [ref=e34]: The Trans-Pacific Bridge
+          - img [ref=e36]
+  - contentinfo [ref=e39]:
+    - generic [ref=e40]:
+      - generic [ref=e41]: BUSINESS ENTITIES
+      - link "Fund of Funds" [ref=e42] [cursor=pointer]:
+        - /url: /fund-of-funds
+    - generic [ref=e43]:
+      - navigation [ref=e44]:
+        - link "DISCLOSURE" [ref=e45] [cursor=pointer]:
+          - /url: /disclosure
+        - link "GRIEVANCE" [ref=e46] [cursor=pointer]:
+          - /url: /grievance
+        - link "CONTACT US" [ref=e47] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e48]: © 2026 BeeGlobal
