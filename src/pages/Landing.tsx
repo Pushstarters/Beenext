@@ -69,7 +69,7 @@ const Landing = () => {
             <span
               className={`underline ${isUnderlineCycling ? "underline--cycling" : ""}`}
             >
-              <span className="underline-text">institutional seed platform.</span>
+              <span className="underline-text">Institutional seed platform.</span>
               <svg
                 className="underline-mark"
                 width="262"

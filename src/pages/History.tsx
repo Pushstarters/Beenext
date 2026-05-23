@@ -25,6 +25,7 @@ type HistoryRow = {
   company: string;
   founders: string;
   region: string;
+  sector: string;
   description: string;
   url: string;
 };
@@ -97,6 +98,7 @@ const parseHistoryCsv = (csvText: string): HistoryRow[] => {
         company: row.company,
         founders: row.founders,
         region: row.location,
+        sector: row.sector,
         description: row.description,
         url: row.url,
       };
@@ -107,6 +109,7 @@ const parseHistoryCsv = (csvText: string): HistoryRow[] => {
 const historyRows = parseHistoryCsv(historyCsv);
 const foundingYearOptions = [...new Set(historyRows.map((row) => row.year))];
 const regionOptions = [...new Set(historyRows.map((row) => row.region))];
+const sectorOptions = [...new Set(historyRows.map((row) => row.sector).filter(Boolean))];
 
 const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "NoBroker": "#fd3752",
@@ -210,6 +213,7 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
 const History = () => {
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
+  const [selectedSector, setSelectedSector] = useState("");
   const rowsRef = useRef<HTMLDivElement | null>(null);
   const wheelDeltaRef = useRef(0);
   const filteredRows = historyRows.filter((row) => {
@@ -218,6 +222,10 @@ const History = () => {
     }
 
     if (selectedRegion && row.region !== selectedRegion) {
+      return false;
+    }
+
+    if (selectedSector && row.sector !== selectedSector) {
       return false;
     }
 
@@ -332,7 +340,7 @@ const History = () => {
       top: 0,
       behavior: "auto",
     });
-  }, [selectedRegion, selectedYear]);
+  }, [selectedRegion, selectedYear, selectedSector]);
 
   return (
     <div className="history-page">
@@ -412,6 +420,41 @@ const History = () => {
               {regionOptions.map((region) => (
                 <option key={region} value={region}>
                   {region}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label
+            className={`filter-pill filter-pill--select history-filter history-filter--sector${selectedSector ? " filter-pill--active" : ""}`}
+          >
+            <span>Sector</span>
+            <svg
+              className="chev"
+              width="10"
+              height="6"
+              viewBox="0 0 10 6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M1 1L5 5L9 1"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <select
+              className="filter-select"
+              aria-label="Filter by sector"
+              value={selectedSector}
+              onChange={(event) => setSelectedSector(event.target.value)}
+            >
+              <option value="">All sectors</option>
+              {sectorOptions.map((sector) => (
+                <option key={sector} value={sector}>
+                  {sector}
                 </option>
               ))}
             </select>

@@ -773,9 +773,10 @@ a {
 }
 
 .history-filters {
-  display: grid;
-  grid-template-columns: 220px 220px minmax(0, 1fr) 160px 140px;
-  column-gap: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
   padding: 24px 0 30px;
   align-items: center;
   font-family: "Mona Sans", "Segoe UI", sans-serif;
@@ -784,14 +785,6 @@ a {
   line-height: 24px;
   letter-spacing: 0px;
   color: var(--gray-300);
-}
-
-.history-filter--year {
-  grid-column: 4;
-}
-
-.history-filter--location {
-  grid-column: 5;
 }
 
 .filter-pill {
@@ -819,7 +812,8 @@ a {
 .filter-pill--select {
   position: relative;
   min-width: 0;
-  width: 100%;
+  width: 200px;
+  max-width: 200px;
 }
 
 .filter-pill--active {
@@ -2594,9 +2588,8 @@ a {
   }
 
   .history-filters {
-    grid-template-columns: 170px 105px minmax(0, 1fr) 128px 128px;
+    gap: 10px;
     padding: 20px 0;
-    column-gap: 16px;
     font-size: 14px;
   }
 
@@ -2860,8 +2853,8 @@ a {
   }
 
   .history-filter--year,
-  .history-filter--location {
-    grid-column: auto;
+  .history-filter--location,
+  .history-filter--sector {
     min-width: 0;
   }
 
