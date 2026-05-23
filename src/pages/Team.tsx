@@ -14,6 +14,7 @@ type TeamMember = {
   role: string;
   subtitle?: string;
   image: string;
+  mirror?: boolean;
   bullets: string[];
   linkedin: string;
 };
@@ -25,6 +26,7 @@ const teamMembers: TeamMember[] = [
     subtitle: "India Lead, BEENEXT",
     image: anirudhImg,
     bullets: [
+      "**BITS Pilani** & **Stanford GSB**",
       "Ex-strategy team at **Flipkart**, **Deep-Tech investor** at **Speciale Invest**",
       "**GP advisor** / scout for **Makena Capital** (**USD 20B** fund of fund on Sandhill road)",
     ],
@@ -36,6 +38,7 @@ const teamMembers: TeamMember[] = [
     subtitle: "India CoLead, BEENEXT",
     image: sakshamImg,
     bullets: [
+      "**BITS Pilani** & **IIM Lucknow**",
       "Ex-investment team at **Athera Venture Partners**",
       "Previously worked at **Uber (P&L)** and **Nvidia**",
     ],
@@ -46,6 +49,7 @@ const teamMembers: TeamMember[] = [
     role: "Senior Advisor",
     subtitle: "Founder, BEENEXT",
     image: teruImg,
+    mirror:true,
     bullets: [
       "**3x entrepreneur** (BEENOS **listed** on **Tokyo Stock Exchange**)",
       "Executive member of **Silicon Valley Japan Platform**, trustee of International House of Japan",
@@ -68,7 +72,9 @@ const teamMembers: TeamMember[] = [
     name: "Sukhmani Singh",
     role: "General Counsel",
     image: sukhmaniImg,
+    mirror:true,
     bullets: [
+      "**National Law School of India, Bangalore**",
       "General Counsel, BEENEXT",
       "Ex- PE/VC and M&A Team at Khaitan & Co., Bangalore",
     ],
@@ -79,6 +85,7 @@ const teamMembers: TeamMember[] = [
     role: "Head of Platform",
     image: devanshiImg,
     bullets: [
+      "**BITS Pilani, Goa** & **IIM Calcutta**",
       "Working across **India capital strategy**, **portfolio value creation** & investments.",
       "Previously **managed** private investment portfolios for **family offices** at **Avendus**",
     ],
@@ -88,6 +95,7 @@ const teamMembers: TeamMember[] = [
     name: "Nupur Kedia",
     role: "Head of Finance",
     image: nupurImg,
+    mirror:true,
     bullets: [
       "14 years of experience in corporate taxation at Ernst & Young with specialisation in venture capital funds and start-ups",
       "CA (2011-2014)",
@@ -99,6 +107,7 @@ const teamMembers: TeamMember[] = [
     role: "Investments",
     image: piyushImg,
     bullets: [
+      "**BITS Pilani, Goa**",
       "Sector Specialist: Consumer, Health, Consumer Tech,",
       "Ex-OneCard, ShareChat and Flipkart",
     ],
@@ -140,7 +149,7 @@ const Team = () => {
             onClick={() => setActiveMember(member)}
           >
             <div className="team-photo">
-              <img src={member.image} alt={member.name} />
+              <img src={member.image} alt={member.name} style={member.mirror ? { transform: "scaleX(-1)" } : undefined} />
               <span className="team-photo-name">{member.name}</span>
             </div>
           </button>
@@ -179,7 +188,7 @@ const Team = () => {
             </div>
             <div className="drawer-content">
               <div className="drawer-media">
-                <img src={activeMember.image} alt={activeMember.name} />
+                <img src={activeMember.image} alt={activeMember.name} style={activeMember.mirror ? { transform: "scaleX(-1)" } : undefined} />
               </div>
               <div className="drawer-text">
                 <ul className="drawer-bio">
