@@ -1,0 +1,65 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - link "BeeGlobal" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "BeeGlobal" [ref=e7]
+    - generic [ref=e8]:
+      - link "Ethos" [ref=e9] [cursor=pointer]:
+        - /url: /ethos
+      - link "History" [ref=e10] [cursor=pointer]:
+        - /url: /history
+      - link "Team" [ref=e11] [cursor=pointer]:
+        - /url: /team
+      - link "Community" [ref=e12] [cursor=pointer]:
+        - /url: /community
+      - link "Portfolio" [ref=e13] [cursor=pointer]:
+        - /url: /portfolio
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Alternative Investment Funds Disclosures" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Transparent reporting and regulatory information for our investment vehicles and management entities.
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]:
+            - img [ref=e22]
+            - generic [ref=e24]:
+              - generic [ref=e25]: FUND NAME
+              - generic [ref=e26]: BeeGlobal FoF
+          - generic [ref=e27]:
+            - img [ref=e28]
+            - generic [ref=e30]:
+              - generic [ref=e31]: REGISTRATION NUMBER
+              - generic [ref=e32]: Still in process
+          - generic [ref=e33]:
+            - img [ref=e34]
+            - generic [ref=e36]:
+              - generic [ref=e37]: CATEGORY
+              - generic [ref=e38]: Category I AIF
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]:
+              - generic [ref=e43]: FUND MANAGEMENT ENTITY (FME)
+              - generic [ref=e44]: BEE Legacy Management LLP
+        - generic [ref=e45]:
+          - img [ref=e46]
+          - generic [ref=e49]:
+            - generic [ref=e50]: REGISTERED OFFICE
+            - generic [ref=e51]:
+              - text: Ground Floor, Unit No. B_111,
+              - text: GIFT-Multi Services-SEZ, GIFT City,
+              - text: Gandhinagar, Gujarat – 382050
+  - contentinfo [ref=e52]:
+    - generic [ref=e53]:
+      - generic [ref=e54]: BUSINESS ENTITIES
+      - link "Fund of Funds" [ref=e55] [cursor=pointer]:
+        - /url: /fund-of-funds
+    - generic [ref=e56]:
+      - navigation [ref=e57]:
+        - link "DISCLOSURE" [ref=e58] [cursor=pointer]:
+          - /url: /disclosure
+        - link "GRIEVANCE" [ref=e59] [cursor=pointer]:
+          - /url: /grievance
+        - link "CONTACT US" [ref=e60] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e61]: © 2026 BeeGlobal

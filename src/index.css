@@ -492,7 +492,8 @@ a {
   font-family: 'Mona Sans';
   font-weight: 400;
   font-size: 48px;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: #132e35;
   max-width: 560px;
   margin: 0;
@@ -538,7 +539,7 @@ a {
 .grievance-card-title {
   font-family: 'Mona Sans';
   font-weight: 500;
-  font-size: 32px;
+  font-size: 24px;
   color: #132e35;
   margin: 0;
 }
@@ -3291,7 +3292,7 @@ a {
 .ethos-body {
   font-family: 'Mona Sans';
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
   color: #374151;
   margin: 0;
@@ -3451,15 +3452,17 @@ a {
 
 .seedplatform-hero {
   text-align: center;
-  padding: 40px 40px 32px;
-  max-width: 620px;
+  padding: 40px 80px 32px;
+  max-width: 860px;
+  width: 100%;
 }
 
 .seedplatform-title {
   font-family: "Mona Sans";
   font-weight: 400;
   font-size: 48px;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: #132e35;
   margin: 0 0 16px;
 }
@@ -3487,12 +3490,19 @@ a {
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   padding: 24px 28px;
+  transition: border-color 600ms ease, box-shadow 600ms ease;
+  cursor: pointer;
+}
+
+.seedplatform-card:hover {
+  border-color: #69818d;
+  box-shadow: 0 4px 16px rgba(105, 129, 141, 0.15);
 }
 
 .seedplatform-card-title {
   font-family: "Mona Sans";
   font-weight: 500;
-  font-size: 32px;
+  font-size: 24px;
   color: #132e35;
   margin: 0 0 10px;
 }
@@ -3552,6 +3562,7 @@ a {
   font-weight: 400;
   font-size: 48px;
   line-height: 1.1;
+  letter-spacing: -0.02em;
   color: #132e35;
   margin: 0 0 20px;
 }
@@ -3579,12 +3590,19 @@ a {
   border: 1px solid #e2e6ea;
   border-radius: 10px;
   padding: 32px 28px;
+  transition: border-color 600ms ease, box-shadow 600ms ease;
+  cursor: pointer;
+}
+
+.founderfirst-card:hover {
+  border-color: #69818d;
+  box-shadow: 0 4px 16px rgba(105, 129, 141, 0.15);
 }
 
 .founderfirst-card-title {
   font-family: "Mona Sans";
   font-weight: 500;
-  font-size: 32px;
+  font-size: 24px;
   color: #132e35;
   margin: 0 0 20px;
 }

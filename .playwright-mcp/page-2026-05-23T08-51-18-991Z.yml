@@ -1,0 +1,73 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - link "BeeGlobal" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "BeeGlobal" [ref=e7]
+    - generic [ref=e8]:
+      - link "Ethos" [ref=e9] [cursor=pointer]:
+        - /url: /ethos
+      - link "History" [ref=e10] [cursor=pointer]:
+        - /url: /history
+      - link "Team" [ref=e11] [cursor=pointer]:
+        - /url: /team
+      - link "Community" [ref=e12] [cursor=pointer]:
+        - /url: /community
+      - link "Portfolio" [ref=e13] [cursor=pointer]:
+        - /url: /portfolio
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Complaint Handling and Grievance Redressal Policy" [level=1] [ref=e17]
+        - link "Download Full Policy (PDF)" [ref=e18] [cursor=pointer]:
+          - /url: /complaint-handling-policy.pdf
+          - img [ref=e19]
+          - text: Download Full Policy (PDF)
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - heading "Complaint Redressal Officer (CRO)" [level=2] [ref=e24]
+          - generic [ref=e25]:
+            - img [ref=e26]
+            - generic [ref=e29]:
+              - generic [ref=e30]: Name
+              - generic [ref=e31]: Nupur Kedia
+          - generic [ref=e32]:
+            - img [ref=e33]
+            - generic [ref=e36]:
+              - generic [ref=e37]: Email
+              - generic [ref=e38]: nupur@beeglobal.com
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]:
+              - generic [ref=e43]: Mobile
+              - generic [ref=e44]: +91 9844166835
+        - generic [ref=e45]:
+          - heading "Complaint Redressal Appellate Officer (CRAO)" [level=2] [ref=e46]
+          - generic [ref=e47]:
+            - img [ref=e48]
+            - generic [ref=e51]:
+              - generic [ref=e52]: Name
+              - generic [ref=e53]: Anirudh Garg
+          - generic [ref=e54]:
+            - img [ref=e55]
+            - generic [ref=e58]:
+              - generic [ref=e59]: Email
+              - generic [ref=e60]: anirudh@beeglobal.com
+          - generic [ref=e61]:
+            - img [ref=e62]
+            - generic [ref=e64]:
+              - generic [ref=e65]: Mobile
+              - generic [ref=e66]: +91 9999699047
+  - contentinfo [ref=e67]:
+    - generic [ref=e68]:
+      - generic [ref=e69]: BUSINESS ENTITIES
+      - link "Fund of Funds" [ref=e70] [cursor=pointer]:
+        - /url: /fund-of-funds
+    - generic [ref=e71]:
+      - navigation [ref=e72]:
+        - link "DISCLOSURE" [ref=e73] [cursor=pointer]:
+          - /url: /disclosure
+        - link "GRIEVANCE" [ref=e74] [cursor=pointer]:
+          - /url: /grievance
+        - link "CONTACT US" [ref=e75] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e76]: © 2026 BeeGlobal

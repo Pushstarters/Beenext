@@ -1,0 +1,47 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - link "BeeGlobal" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "BeeGlobal" [ref=e7]
+    - generic [ref=e8]:
+      - link "Ethos" [ref=e9] [cursor=pointer]:
+        - /url: /ethos
+      - link "History" [ref=e10] [cursor=pointer]:
+        - /url: /history
+      - link "Team" [ref=e11] [cursor=pointer]:
+        - /url: /team
+      - link "Community" [ref=e12] [cursor=pointer]:
+        - /url: /community
+      - link "Portfolio" [ref=e13] [cursor=pointer]:
+        - /url: /portfolio
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "The Institutional Seed Platform" [level=1] [ref=e17]
+        - paragraph [ref=e18]: We are the generation that grew up alongside the founders we now back. We bring the weight of a global legacy, but with the renewed, localized energy of a team that lives on the ground.
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - heading "Stage Focus:" [level=2] [ref=e21]
+          - paragraph [ref=e22]: 100% committed to your Pre-Seed, Seed, and Series A journey.
+        - generic [ref=e23]:
+          - heading "First Cheque:" [level=2] [ref=e24]
+          - paragraph [ref=e25]: High-conviction backing ranging from USD 500k to 3M.
+        - generic [ref=e26]:
+          - heading "Sector Preferences:" [level=2] [ref=e27]
+          - list [ref=e28]:
+            - listitem [ref=e29]: Foundational Sectors (Industrials, Financial Services, Consumer Brands)
+            - listitem [ref=e30]: Frontier Tech (B2B AI, DeepTech, Space Tech, and Life Sciences)
+  - contentinfo [ref=e31]:
+    - generic [ref=e32]:
+      - generic [ref=e33]: BUSINESS ENTITIES
+      - link "Fund of Funds" [ref=e34] [cursor=pointer]:
+        - /url: /fund-of-funds
+    - generic [ref=e35]:
+      - navigation [ref=e36]:
+        - link "DISCLOSURE" [ref=e37] [cursor=pointer]:
+          - /url: /disclosure
+        - link "GRIEVANCE" [ref=e38] [cursor=pointer]:
+          - /url: /grievance
+        - link "CONTACT US" [ref=e39] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e40]: © 2026 BeeGlobal

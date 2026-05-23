@@ -19,7 +19,7 @@ const Grievance = () => (
       <h1 className="grievance-title">
         Complaint Handling and Grievance Redressal Policy
       </h1>
-      <a className="grievance-download" href="#" download>
+      <a className="grievance-download" href="/complaint-handling-policy.pdf" download="Complaint Handling Policy.pdf">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
           <path d="M9 1v10M9 11l-3-3M9 11l3-3" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M1 13v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
