@@ -901,7 +901,9 @@ a {
 
 .history-table-scroll {
   overflow-x: auto;
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
   width: 100%;
 }
 
@@ -920,10 +922,10 @@ a {
 
 .history-rows-header {
   display: grid;
-  grid-template-columns: 210px 220px minmax(0, 1fr) 140px 140px 190px;
-  min-width: 1000px;
+  grid-template-columns: 210px 220px minmax(180px, 1fr) 140px 140px 190px;
+  min-width: 1220px;
   gap: 24px;
-  padding: 12px 0;
+  padding: 12px 6px 12px 0;
   background: var(--history-accent);
   color: #ffffff;
   font-family: "Mona Sans", "Segoe UI", sans-serif;
@@ -935,17 +937,23 @@ a {
 
 .history-rows-header-cell {
   text-align: center;
-  /* padding: 0px 13px; */
 }
+
+.history-rows-header-cell:first-child {
+  padding-left: 20px;
+  text-align: left;
+}
+
 .cell.company {
   padding-left: 20px;
+  text-align: left;
 }
 .history-rows {
   max-height: min(56vh, 420px);
   overflow-y: auto;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
-  min-width: 1000px;
+  min-width: 1220px;
   scroll-snap-type: y mandatory;
   scrollbar-width: thin;
   scrollbar-color: var(--history-accent) #eef1f4;
@@ -967,7 +975,8 @@ a {
 
 .history-row {
   display: grid;
-  grid-template-columns: 210px 220px minmax(0, 1fr) 140px 140px 190px;
+  grid-template-columns: 210px 220px minmax(180px, 1fr) 140px 140px 190px;
+  min-width: 1220px;
   gap: 24px;
   padding: 18px 0;
   border-bottom: 1px solid #eef1f4;
@@ -1093,13 +1102,27 @@ a {
     padding: 32px 20px 0;
   }
 
-
   .history-filters {
     flex-wrap: wrap;
     gap: 16px;
   }
+
+  .history-table-scroll {
+    touch-action: pan-x pan-y;
+  }
+
+  .history-rows {
+    scroll-snap-type: none;
+    overscroll-behavior: auto;
+    touch-action: pan-y;
+  }
 }
 
+@media (max-width: 767px) {
+.history-rows {
+    overflow-y: scroll;
+}
+}
 .team-page {
   padding: 50px 33px 0;
   cursor: auto;
