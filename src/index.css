@@ -901,7 +901,7 @@ a {
 
 .history-rows-header {
   display: grid;
-  grid-template-columns: 180px 220px minmax(0, 1fr) 140px 140px 160px;
+  grid-template-columns: 210px 220px minmax(0, 1fr) 140px 140px 190px;
   gap: 24px;
   padding: 12px 0;
   background: var(--history-accent);
@@ -947,7 +947,7 @@ a {
 
 .history-row {
   display: grid;
-  grid-template-columns: 180px 220px minmax(0, 1fr) 140px 140px 160px;
+  grid-template-columns: 210px 220px minmax(0, 1fr) 140px 140px 190px;
   gap: 24px;
   padding: 18px 0;
   border-bottom: 1px solid #eef1f4;
@@ -1002,6 +1002,16 @@ a {
   line-height: 1.35;
   color: #132e35;
   text-align: center;
+}
+
+.history-row .sector {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #132e35;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .history-row .cell {
   color: #132e35;
@@ -3582,6 +3592,7 @@ a {
   flex: 1;
   background: #ffffff;
   min-height: calc(100vh - 60px);
+  overflow-x: hidden;
 }
 
 /* .transpac-hero {
@@ -3625,6 +3636,7 @@ a {
   max-width: 1100px;
   margin: -20px auto 0;
   padding-bottom: 60px;
+  overflow: hidden;
 }
 
 .transpac-map svg,
@@ -3645,6 +3657,24 @@ a {
 
 .transpac-blink {
   animation: transpac-blink 2.4s ease-in-out infinite;
+}
+
+.seedplatform-back,
+.founderfirst-back,
+.transpac-back {
+  display: flex;
+  align-self: flex-start;
+  padding-left: 50px;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .seedplatform-back,
+  .founderfirst-back,
+  .transpac-back {
+    padding-left: 21px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -3695,6 +3725,8 @@ a {
   max-width: 860px;
   width: 100%;
 }
+
+
 
 .seedplatform-title {
   font-family: "Mona Sans";

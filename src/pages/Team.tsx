@@ -74,7 +74,7 @@ const teamMembers: TeamMember[] = [
     image: sukhmaniImg,
     mirror:true,
     bullets: [
-      "Alumna, **National Law School of India, Bangalore**",
+      "Alumnus, **National Law School of India, Bangalore**",
       "General Counsel, BEENEXT",
       "Ex- PE/VC and M&A Team at Khaitan & Co., Bangalore",
     ],

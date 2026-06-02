@@ -9,8 +9,20 @@ const CARDS = [
   },
 ];
 
+import { Link } from "react-router-dom";
+
+const BackArrowIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 const FounderFirst = () => (
   <div className="founderfirst-page">
+    <Link className="ethos-back founderfirst-back" to="/ethos">
+      <span className="ethos-back-icon"><BackArrowIcon /></span>
+      <span>Back</span>
+    </Link>
     <div className="founderfirst-hero">
       <h1 className="founderfirst-title">Founder-First, Always</h1>
       <p className="founderfirst-subtitle">

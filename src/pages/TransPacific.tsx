@@ -1,4 +1,11 @@
+import { Link } from "react-router-dom";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+
+const BackArrowIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
 
 const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
@@ -7,6 +14,10 @@ const HIGHLIGHTED = new Set(["840", "356", "392", "410", "158"]);
 
 const TransPacific = () => (
   <div className="transpac-page">
+    <Link className="ethos-back transpac-back" to="/ethos">
+      <span className="ethos-back-icon"><BackArrowIcon /></span>
+      <span>Back</span>
+    </Link>
     <div className="transpac-hero">
       <h1 className="transpac-title">The Trans-Pacific Bridge</h1>
       <p className="transpac-subtitle">
@@ -19,8 +30,8 @@ const TransPacific = () => (
       <ComposableMap
         projection="geoEquirectangular"
         width={960}
-        height={500}
-        projectionConfig={{ scale: 153, center: [0, 20] }}
+        height={440}
+        projectionConfig={{ scale: 153, center: [15, 25] }}
       >
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
@@ -32,7 +43,7 @@ const TransPacific = () => (
                   geography={geo}
                   className={isHighlighted ? "transpac-blink" : undefined}
                   fill={isHighlighted ? "#6b8fa0" : "transparent"}
-                  stroke={isHighlighted ? "#6b8fa0" : "#c8d5dc"}
+                  stroke={isHighlighted ? "none" : "#c8d5dc"}
                   strokeWidth={0.5}
                   style={{
                     default: { outline: "none" },
