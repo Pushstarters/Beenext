@@ -38,7 +38,8 @@ const SeedPlatform = () => (
       <div className="seedplatform-card">
         <h2 className="seedplatform-card-title">Sector Preferences:</h2>
         <ul className="seedplatform-card-list">
-          <li>Consumer</li>
+          <li>Foundational Sectors (Consumer Brands)</li>
+          <li>Frontier Tech (B2B AI, DeepTech, Space Tech, and Life Sciences)</li>
         </ul>
       </div>
     </div>
