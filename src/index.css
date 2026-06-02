@@ -1100,6 +1100,7 @@ a {
 @media (max-width: 900px) {
   .history-page {
     padding: 32px 20px 0;
+
   }
 
   .history-filters {
@@ -1108,7 +1109,8 @@ a {
   }
 
   .history-table-scroll {
-    touch-action: pan-x pan-y;
+    /* touch-action: pan-x pan-y; */
+    overflow-x: scroll;
   }
 
   .history-rows {
