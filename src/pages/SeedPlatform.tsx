@@ -12,22 +12,21 @@ const SeedPlatform = () => (
       <div className="seedplatform-card">
         <h2 className="seedplatform-card-title">Stage Focus:</h2>
         <p className="seedplatform-card-body">
-          100% committed to your Pre-Seed, Seed, and Series A journey.
+          100% committed to your Pre-Seed and Seed journey.
         </p>
       </div>
 
       <div className="seedplatform-card">
         <h2 className="seedplatform-card-title">First Cheque:</h2>
         <p className="seedplatform-card-body">
-          High-conviction backing ranging from USD 500k to 3M.
+          High-conviction backing ranging from USD 1mn to 4mn.
         </p>
       </div>
 
       <div className="seedplatform-card">
         <h2 className="seedplatform-card-title">Sector Preferences:</h2>
         <ul className="seedplatform-card-list">
-          <li>Foundational Sectors (Industrials, Financial Services, Consumer Brands)</li>
-          <li>Frontier Tech (B2B AI, DeepTech, Space Tech, and Life Sciences)</li>
+          <li>Consumer</li>
         </ul>
       </div>
     </div>

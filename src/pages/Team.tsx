@@ -26,7 +26,7 @@ const teamMembers: TeamMember[] = [
     subtitle: "India Lead, BEENEXT",
     image: anirudhImg,
     bullets: [
-      "**BITS Pilani** & **Stanford GSB**",
+      "Alumnus, **BITS Pilani** & **Stanford GSB**",
       "Ex-strategy team at **Flipkart**, **Deep-Tech investor** at **Speciale Invest**",
       "**GP advisor** / scout for **Makena Capital** (**USD 20B** fund of fund on Sandhill road)",
     ],
@@ -38,7 +38,7 @@ const teamMembers: TeamMember[] = [
     subtitle: "India CoLead, BEENEXT",
     image: sakshamImg,
     bullets: [
-      "**BITS Pilani** & **IIM Lucknow**",
+      "Alumnus, **BITS Pilani** & **IIM Lucknow**",
       "Ex-investment team at **Athera Venture Partners**",
       "Previously worked at **Uber (P&L)** and **Nvidia**",
     ],
@@ -74,7 +74,7 @@ const teamMembers: TeamMember[] = [
     image: sukhmaniImg,
     mirror:true,
     bullets: [
-      "**National Law School of India, Bangalore**",
+      "Alumna, **National Law School of India, Bangalore**",
       "General Counsel, BEENEXT",
       "Ex- PE/VC and M&A Team at Khaitan & Co., Bangalore",
     ],
@@ -85,7 +85,7 @@ const teamMembers: TeamMember[] = [
     role: "Head of Platform",
     image: devanshiImg,
     bullets: [
-      "**BITS Pilani, Goa** & **IIM Calcutta**",
+      "Alumna, **BITS Pilani, Goa** & **IIM Calcutta**",
       "Working across **India capital strategy**, **portfolio value creation** & investments.",
       "Previously **managed** private investment portfolios for **family offices** at **Avendus**",
     ],
@@ -107,7 +107,7 @@ const teamMembers: TeamMember[] = [
     role: "Investments",
     image: piyushImg,
     bullets: [
-      "**BITS Pilani, Goa**",
+      "Alumnus, **BITS Pilani, Goa**",
       "Sector Specialist: Consumer, Health, Consumer Tech,",
       "Ex-OneCard, ShareChat and Flipkart",
     ],

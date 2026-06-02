@@ -385,7 +385,7 @@ const portfolioItems: PortfolioItem[] = [
       textInk: "#621a1d",
     },
     fallbackSummary: "Integrated corporate card and spend management platform",
-    category: ["AI"],
+    category: ["AI", "Financial Services"],
   },
   {
     name: "Crest",
@@ -593,7 +593,7 @@ const portfolioItems: PortfolioItem[] = [
     },
     fallbackSummary:
       "AI-first consulting and solutions company focused on financial services",
-    category: ["AI"],
+    category: ["AI", "Financial Services"],
   },
   {
     name: "Hotdata",

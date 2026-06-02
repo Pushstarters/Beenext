@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 type FundCard = {
   title: string;
   description: string;
@@ -8,7 +10,7 @@ const fundCards: FundCard[] = [
   {
     title: "Silicon Valley Spin-outs",
     description:
-      "High-performing GPs launching independent funds after spinning out from major asset managers.",
+      "High-performing GPs launching independent funds after spinning out from major asset managers",
     variant: "deep",
   },
   {
@@ -24,12 +26,22 @@ const fundCards: FundCard[] = [
 ];
 
 const FundOfFunds = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="fof-page">
+      <button className="fof-back" type="button" onClick={() => navigate(-1)}>
+        <span className="fof-back-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </span>
+        <span>Back</span>
+      </button>
       <section className="fof-hero">
-        <h1 className="fof-title">Bridging Asia to the West.</h1>
+        <h1 className="fof-title">Bridging Asia to the West</h1>
         <p className="fof-subtitle">
-          Building and enabling a trusted platform to support seed fund managers globally.
+          Building and enabling a trusted platform to support seed fund managers globally
         </p>
       </section>
 

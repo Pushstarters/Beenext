@@ -66,6 +66,11 @@ const parseCsvLine = (line: string) => {
 
 const sentenceCase = (value: string) => value.replace(/\s+/g, " ").trim();
 
+const toSentenceCase = (value: string) => {
+  if (!value) return value;
+  return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+};
+
 const parseHistoryCsv = (csvText: string): HistoryRow[] => {
   const lines = csvText
     .split(/\r?\n/)
@@ -122,9 +127,9 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Fyle.ai": "#1ada4d",
   "Droom": "#eb7362",
   "HackerEarth": "#384fdc",
-  "DailyRounds": "#950203",
+  "DailyRounds (Marrow)": "#950203",
   "GetMyParking": "#23AD5E",
-  "Faasos": "#252525",
+  "Rebel Foods (Faasos)": "#252525",
   "Idfy": "#5A0707",
   "Industrybuying.com": "#EC4519",
   "CitrusPay": "#f7941d",
@@ -133,7 +138,7 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Open": "#663399",
   "Smallcase": "#0051ba",
   "Mobile Premier League": "#ff3366",
-  "EasyDiner": "#FF4815",
+  "EazyDiner": "#FF4815",
   "SafeGold": "#00bbb4",
   "mFine": "#0095b6",
   "Niramai": "#862452",
@@ -142,21 +147,21 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "M1Exchange": "#035B9F",
   "Fleetx": "#0078D4",
   "Skuad.io": "#0092f4",
-  "Appforbharat": "#f97316",
-  "Loadshare": "#3987FD",
+  "AppForBharat": "#f97316",
+  "LoadShare": "#3987FD",
   "Animall": "#15857c",
   "Procol": "#1375e4",
-  "Winuall.com": "#ff6b00",
+  "Winuall (Edify)": "#ff6b00",
   "Agnikul": "#446641",
   "BlueSky Analytics": "#2563eb",
   "Kenko Health": "#00b386",
   "Lucidity": "#8aec64",
   "IndiaFilings": "#EC7908",
   "Driffle": "#388AFD",
-  "Fitbudd": "#FF5E19",
+  "FitBudd": "#FF5E19",
   "Zoplar": "#e02424",
   "Bummer": "#f3c500",
-  "Scimplifi": "#2563eb",
+  "Scimplify": "#2563eb",
   "Furnishka": "#a0522d",
   "Defendermate": "#A936F6",
   "Axirium Aerospace": "#EF4257",
@@ -176,7 +181,7 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Stellapps":"#2C38A4",
   "Wellthy":"#FC6558",
   "ZestIoT":"#001F3F",
-  "Toodle":"#FF6169",
+  "Toddle":"#FF6169",
   "Quicksell":"#1F8C39",
   "Kitchens@":"#FF0303",
   "Dhan":"#48B58E",
@@ -205,8 +210,8 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Hotdata AI":"#CF7B51",
   "FalconBrick":"#FFC938",
   "Angellist India":"#002D33",
-  "Moneytap/ Freo":"#FC5106",
-  "Jupiter + Amica":"#FC7A69",
+  "Moneytap (Freo)":"#FC5106",
+  "Jupiter":"#FC7A69",
   "Crest":"#132E35",
 };
 
@@ -467,6 +472,7 @@ const History = () => {
           <div className="history-rows-header-cell">Description</div>
           <div className="history-rows-header-cell">Founding Year</div>
           <div className="history-rows-header-cell">Location</div>
+          <div className="history-rows-header-cell">Sector</div>
         </div>
 
         <div
@@ -500,7 +506,8 @@ const History = () => {
               <div className="cell founders">{row.founders}</div>
               <div className="cell desc">{row.description}</div>
               <div className="cell year">{row.year}</div>
-              <div className="cell amount">{row.region}</div>
+              <div className="cell amount">{toSentenceCase(row.region)}</div>
+              <div className="cell sector">{row.sector}</div>
             </div>
           ))}
           {filteredRows.length === 0 && (

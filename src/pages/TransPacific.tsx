@@ -17,10 +17,10 @@ const TransPacific = () => (
     </div>
     <div className="transpac-map">
       <ComposableMap
-        projection="geoNaturalEarth1"
+        projection="geoEquirectangular"
         width={960}
         height={500}
-        projectionConfig={{ scale: 165, center: [0, 30] }}
+        projectionConfig={{ scale: 153, center: [0, 20] }}
       >
         <Geographies geography={GEO_URL}>
           {({ geographies }) =>
@@ -30,16 +30,13 @@ const TransPacific = () => (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
+                  className={isHighlighted ? "transpac-blink" : undefined}
                   fill={isHighlighted ? "#6b8fa0" : "transparent"}
                   stroke={isHighlighted ? "#6b8fa0" : "#c8d5dc"}
                   strokeWidth={0.5}
                   style={{
                     default: { outline: "none" },
-                    hover: {
-                      fill: isHighlighted ? "#9ab8c8" : "transparent",
-                      outline: "none",
-                      cursor: isHighlighted ? "pointer" : "default",
-                    },
+                    hover: { outline: "none" },
                     pressed: { outline: "none" },
                   }}
                 />
