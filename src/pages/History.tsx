@@ -466,6 +466,7 @@ const History = () => {
           </label>
         </div>
 
+        <div className="history-table-scroll">
         <div className="history-rows-header">
           <div className="history-rows-header-cell">Company Name</div>
           <div className="history-rows-header-cell">Founders</div>
@@ -515,6 +516,7 @@ const History = () => {
               <div className="cell desc">No companies match the selected filters.</div>
             </div>
           )}
+        </div>
         </div>
       </section>
     </div>

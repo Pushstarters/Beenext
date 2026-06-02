@@ -899,9 +899,29 @@ a {
   transform: translateY(-1px);
 }
 
+.history-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.history-table-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.history-table-scroll::-webkit-scrollbar-track {
+  background: #eef1f4;
+}
+
+.history-table-scroll::-webkit-scrollbar-thumb {
+  background: var(--history-accent);
+  border-radius: 2px;
+}
+
 .history-rows-header {
   display: grid;
   grid-template-columns: 210px 220px minmax(0, 1fr) 140px 140px 190px;
+  min-width: 1000px;
   gap: 24px;
   padding: 12px 0;
   background: var(--history-accent);
@@ -925,11 +945,11 @@ a {
   overflow-y: auto;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
+  min-width: 1000px;
   scroll-snap-type: y mandatory;
   scrollbar-width: thin;
   scrollbar-color: var(--history-accent) #eef1f4;
   scrollbar-gutter: stable;
-  overflow-x: hidden;
 }
 
 .history-rows::-webkit-scrollbar {
@@ -1073,17 +1093,6 @@ a {
     padding: 32px 20px 0;
   }
 
-  .history-row {
-    grid-template-columns: 1fr;
-  }
-
-  .history-rows {
-    max-height: none;
-    overflow-y: visible;
-    scroll-snap-type: none;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
 
   .history-filters {
     flex-wrap: wrap;
@@ -2705,18 +2714,6 @@ a {
     font-size: 14px;
   }
 
-  .history-rows-header {
-    grid-template-columns: 170px 105px minmax(0, 1fr) 128px 128px;
-    gap: 16px;
-    font-size: 12px;
-  }
-
-  .history-row {
-    grid-template-columns: 170px 105px minmax(0, 1fr) 128px 128px;
-    gap: 16px;
-    font-size: 14px;
-    text-align: center;
-  }
 
   .team-page {
     padding: 40px 24px 0;
@@ -2970,34 +2967,6 @@ a {
     min-width: 0;
   }
 
-  .history-row {
-    grid-template-columns: 64px minmax(0, 1fr) auto;
-    gap: 0 10px;
-    padding: 16px 0;
-    font-size: 14px;
-  }
-
-  .history-row .founders,
-  .history-row .desc {
-    grid-column: 1 / -1;
-    margin-top: 10px;
-    font-size: 13px;
-    line-height: 1.42;
-  }
-
-  .history-row .year,
-  .history-row .company {
-    line-height: 1;
-  }
-
-  .history-row .amount {
-    font-size: 10px;
-    line-height: 1.4;
-  }
-
-  .history-row .cell {
-    text-align: center;
-  }
 
   .team-page {
     padding: 28px 16px 0;
@@ -3236,47 +3205,6 @@ a {
     color: #132e35;
   }
 
-  .history-row {
-    grid-template-columns: 58px minmax(0, 1fr) auto;
-    gap: 0 8px;
-    padding: 16px 0 18px;
-    text-align: center;
-    transform: none;
-    filter: none;
-    opacity: 1;
-  }
-
-  .history-row .year,
-  .history-row .company {
-    font-family: "Mona Sans", "Segoe UI", sans-serif;
-    font-weight: 400;
-    font-size: 21px;
-    line-height: 1;
-    color: #183a5a;
-  }
-
-  .history-row .amount {
-    text-align: right;
-    font-size: 10px;
-    line-height: 1.3;
-    letter-spacing: 0.08em;
-    color: #7a8da1;
-  }
-
-  .history-row .founders,
-  .history-row .desc {
-    grid-column: 1 / -1;
-    margin-top: 12px;
-    font-family: "Mona Sans", "Segoe UI", sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.42;
-    color: #183a5a;
-  }
-
-  .history-row .cell {
-    line-height: 1.2;
-  }
 
   .team-title,
   .community-title,
