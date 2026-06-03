@@ -30,7 +30,6 @@ type HistoryRow = {
   url: string;
 };
 
-const WHEEL_DELTA_THRESHOLD = 45;
 
 const parseCsvLine = (line: string) => {
   const values: string[] = [];
@@ -123,11 +122,11 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "ShipRocket": "#735ae5",
   "Cropin": "#04A5D9",
   "PropertyShare": "#00A87B",
-  "WorkIndia": "#33418a",
+  "WorkIndia": "#9333EA",
   "Fyle.ai": "#1ada4d",
   "Droom": "#eb7362",
   "HackerEarth": "#384fdc",
-  "DailyRounds": "#950203",
+  "DailyRounds": "#DC2626",
   "GetMyParking": "#23AD5E",
   "Faasos": "#252525",
   "Idfy": "#5A0707",
@@ -138,9 +137,9 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Open": "#663399",
   "Smallcase": "#0051ba",
   "Mobile Premier League": "#ff3366",
-  "EasyDiner": "#FF4815",
+  "EasyDiner": "#F97316",
   "SafeGold": "#00bbb4",
-  "mFine": "#0095b6",
+  "mFine": "#38BDF8",
   "Niramai": "#862452",
   "Revv": "#1daba2",
   "M2P Solutions": "#BD2027",
@@ -158,7 +157,7 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Lucidity": "#8aec64",
   "IndiaFilings": "#EC7908",
   "Driffle": "#388AFD",
-  "Fitbudd": "#FF5E19",
+  "Fitbudd": "#F97316",
   "Zoplar": "#e02424",
   "Bummer": "#f3c500",
   "Scimplifi": "#2563eb",
@@ -169,10 +168,10 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Gozefo (acquired by Quikr)":"#0C451E",
   "NuvoEx (Peppertap)":"#F1EE1B",
   "Nimble Wireless":"#0085FF",
-  "Locus":"#290A38",
+  "Locus":"#7C3AED",
   "99tests.com":"#336BD9",
   "RideView":"#8B2783",
-  "Haberwater":"#13426C",
+  "Haberwater":"#2563EB",
   "Milkbasket":"#5CB5E6",
   "FloBiz (merged with Metaloop)":"#52F597",
   "Cognitifai":"#128FCF",
@@ -181,7 +180,7 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Stellapps":"#2C38A4",
   "Wellthy":"#FC6558",
   "ZestIoT":"#001F3F",
-  "Toodle":"#FF6169",
+  "Toodle":"#F97316",
   "Quicksell":"#1F8C39",
   "Kitchens@":"#FF0303",
   "Dhan":"#48B58E",
@@ -211,9 +210,13 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "FalconBrick":"#FFC938",
   "Angellist India":"#002D33",
   "Moneytap/ Freo":"#FC5106",
-  "Jupiter + Amica":"#FC7A69",
+  "Jupiter + Amica":"#FF8C00",
   "Crest":"#132E35",
+  "Notion":"#0052CC",
+  "Unbox Robotics":"#2E8B57",
 };
+
+const WHEEL_DELTA_THRESHOLD = 45;
 
 const History = () => {
   const [selectedYear, setSelectedYear] = useState("");
@@ -221,6 +224,7 @@ const History = () => {
   const [selectedSector, setSelectedSector] = useState("");
   const rowsRef = useRef<HTMLDivElement | null>(null);
   const wheelDeltaRef = useRef(0);
+  const targetIndexRef = useRef(0);
   const filteredRows = historyRows.filter((row) => {
     if (selectedYear && row.year !== selectedYear) {
       return false;
@@ -239,10 +243,7 @@ const History = () => {
 
   const getRowHeight = useCallback(() => {
     const rowsElement = rowsRef.current;
-    if (!rowsElement) {
-      return 0;
-    }
-
+    if (!rowsElement) return 0;
     const firstRow = rowsElement.querySelector<HTMLElement>(".history-row");
     return firstRow?.offsetHeight ?? 0;
   }, []);
@@ -251,49 +252,29 @@ const History = () => {
     (nextIndex: number) => {
       const rowsElement = rowsRef.current;
       const rowHeight = getRowHeight();
-      if (!rowsElement || !rowHeight) {
-        return;
-      }
-
+      if (!rowsElement || !rowHeight) return;
       const maxIndex = Math.max(0, filteredRows.length - 1);
       const clampedIndex = Math.max(0, Math.min(maxIndex, nextIndex));
-
-      rowsElement.scrollTo({
-        top: clampedIndex * rowHeight,
-        behavior: "smooth",
-      });
+      targetIndexRef.current = clampedIndex;
+      rowsElement.scrollTo({ top: clampedIndex * rowHeight, behavior: "smooth" });
     },
     [filteredRows.length, getRowHeight]
   );
 
   const scrollRowsByStep = useCallback(
     (direction: 1 | -1) => {
-      const rowsElement = rowsRef.current;
-      const rowHeight = getRowHeight();
-      if (!rowsElement || !rowHeight) {
-        return;
-      }
-
-      const currentIndex = Math.round(rowsElement.scrollTop / rowHeight);
-      scrollRowsToIndex(currentIndex + direction);
+      scrollRowsToIndex(targetIndexRef.current + direction);
     },
-    [getRowHeight, scrollRowsToIndex]
+    [scrollRowsToIndex]
   );
 
   const handleRowsWheel = useCallback(
     (event: WheelEvent<HTMLDivElement>) => {
       const rowsElement = rowsRef.current;
-      if (!rowsElement || rowsElement.scrollHeight <= rowsElement.clientHeight) {
-        return;
-      }
-
+      if (!rowsElement || rowsElement.scrollHeight <= rowsElement.clientHeight) return;
       event.preventDefault();
       wheelDeltaRef.current += event.deltaY;
-
-      if (Math.abs(wheelDeltaRef.current) < WHEEL_DELTA_THRESHOLD) {
-        return;
-      }
-
+      if (Math.abs(wheelDeltaRef.current) < WHEEL_DELTA_THRESHOLD) return;
       const direction: 1 | -1 = wheelDeltaRef.current > 0 ? 1 : -1;
       wheelDeltaRef.current = 0;
       scrollRowsByStep(direction);
@@ -308,19 +289,16 @@ const History = () => {
         scrollRowsByStep(1);
         return;
       }
-
       if (event.key === "ArrowUp" || event.key === "PageUp") {
         event.preventDefault();
         scrollRowsByStep(-1);
         return;
       }
-
       if (event.key === "Home") {
         event.preventDefault();
         scrollRowsToIndex(0);
         return;
       }
-
       if (event.key === "End") {
         event.preventDefault();
         scrollRowsToIndex(filteredRows.length - 1);
@@ -330,21 +308,14 @@ const History = () => {
   );
 
   useEffect(() => {
-    return () => {
-      wheelDeltaRef.current = 0;
-    };
+    return () => { wheelDeltaRef.current = 0; };
   }, []);
 
   useEffect(() => {
     const rowsElement = rowsRef.current;
-    if (!rowsElement) {
-      return;
-    }
-
-    rowsElement.scrollTo({
-      top: 0,
-      behavior: "auto",
-    });
+    if (!rowsElement) return;
+    targetIndexRef.current = 0;
+    rowsElement.scrollTo({ top: 0, behavior: "auto" });
   }, [selectedRegion, selectedYear, selectedSector]);
 
   return (

@@ -801,7 +801,7 @@ a {
 
 .history-hero {
   max-width: 1000px;
-  margin: 0 0 54px;
+  margin: 0 0 0px;
 }
 
 .history-title {
@@ -949,12 +949,10 @@ a {
   text-align: left;
 }
 .history-rows {
-  max-height: min(56vh, 420px);
+  max-height: calc(100vh - 310px);
   overflow-y: auto;
   overscroll-behavior: contain;
-  scroll-behavior: smooth;
   min-width: 1220px;
-  scroll-snap-type: y mandatory;
   scrollbar-width: thin;
   scrollbar-color: var(--history-accent) #eef1f4;
   scrollbar-gutter: stable;
@@ -993,8 +991,6 @@ a {
   opacity: var(--history-row-opacity);
   transform: translate3d(0, var(--history-parallax-y), 0) scale(1);
   filter: blur(var(--history-row-blur));
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   background: transparent;
   border-radius: 4px;
   transition:
@@ -1085,10 +1081,6 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .history-rows {
-    scroll-behavior: auto;
-  }
-
   .history-row {
     --history-row-opacity: 1;
     --history-row-blur: 0px;
@@ -1109,21 +1101,16 @@ a {
   }
 
   .history-table-scroll {
-    /* touch-action: pan-x pan-y; */
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
   }
 
   .history-rows {
-    scroll-snap-type: none;
-    overscroll-behavior: auto;
-    touch-action: pan-y;
+    touch-action: pan-x pan-y;
+    overscroll-behavior-x: auto;
   }
-}
 
-@media (max-width: 767px) {
-.history-rows {
-    overflow-y: scroll;
-}
 }
 .team-page {
   padding: 50px 33px 0;
