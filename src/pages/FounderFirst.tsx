@@ -4,7 +4,7 @@ const CARDS = [
     body: "We back execution-ready operators who have operated at scale and possess deep sector familiarity to be able to restart from scratch.",
   },
   {
-    title: "Category creators",
+    title: "Category Creators",
     body: "We also back young founders who are creating new categories where incumbents don't exist or are mispositioned.",
   },
 ];
