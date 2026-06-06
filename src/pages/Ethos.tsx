@@ -13,19 +13,8 @@ const ArrowIcon = () => (
   </svg>
 );
 
-const BackArrowIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-    <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
 const Ethos = () => (
   <div className="ethos-page">
-    <Link className="ethos-back" to="/">
-      <span className="ethos-back-icon"><BackArrowIcon /></span>
-      <span className="ethos-back-label">Back</span>
-    </Link>
-
     <div className="ethos-intro">
       <h1 className="ethos-title">
         A partnership built on{" "}

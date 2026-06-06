@@ -70,6 +70,14 @@ const toSentenceCase = (value: string) => {
   return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
 };
 
+const splitSectorValues = (sector: string) =>
+  sector
+    .replace(/\bSoftware\s*(?:\/|\band\b)\s*SaaS\b/gi, "Software, SaaS")
+    .replace(/\bB2B\s*(?:\/|\band\b)\s*Manufacturing\b/gi, "B2B, Manufacturing")
+    .split(",")
+    .map(sentenceCase)
+    .filter(Boolean);
+
 const parseHistoryCsv = (csvText: string): HistoryRow[] => {
   const lines = csvText
     .split(/\r?\n/)
@@ -113,7 +121,7 @@ const parseHistoryCsv = (csvText: string): HistoryRow[] => {
 const historyRows = parseHistoryCsv(historyCsv);
 const foundingYearOptions = [...new Set(historyRows.map((row) => row.year))];
 const regionOptions = [...new Set(historyRows.map((row) => row.region))];
-const sectorOptions = [...new Set(historyRows.map((row) => row.sector).filter(Boolean))];
+const sectorOptions = [...new Set(historyRows.flatMap((row) => splitSectorValues(row.sector)))];
 
 const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "NoBroker": "#fd3752",
@@ -143,7 +151,7 @@ const COMPANY_ACCENT_COLORS: Record<string, string> = {
   "Niramai": "#862452",
   "Revv": "#1daba2",
   "M2P Solutions": "#BD2027",
-  "M1Exchange": "#035B9F",
+  "M1xchange": "#035B9F",
   "Fleetx": "#0078D4",
   "Skuad.io": "#0092f4",
   "AppForBharat": "#f97316",
@@ -234,7 +242,7 @@ const History = () => {
       return false;
     }
 
-    if (selectedSector && row.sector !== selectedSector) {
+    if (selectedSector && !splitSectorValues(row.sector).includes(selectedSector)) {
       return false;
     }
 
@@ -324,7 +332,7 @@ const History = () => {
         <h1 className="history-title">Fueling Founders Since Day One</h1>
         <p className="history-subtitle">
           We didn&apos;t just watch India grow over the past decade; we backed its
-          most ambitious builders from Day Zero
+          most ambitious builders from Day One
         </p>
       </section>
 
@@ -333,7 +341,7 @@ const History = () => {
           <label
             className={`filter-pill filter-pill--select history-filter history-filter--year${selectedYear ? " filter-pill--active" : ""}`}
           >
-            <span>Founding Year</span>
+            <span className="filter-pill-label">{selectedYear || "Founding Year"}</span>
             <svg
               className="chev"
               width="10"
@@ -368,7 +376,7 @@ const History = () => {
           <label
             className={`filter-pill filter-pill--select history-filter history-filter--location${selectedRegion ? " filter-pill--active" : ""}`}
           >
-            <span>Location</span>
+            <span className="filter-pill-label">{selectedRegion || "Location"}</span>
             <svg
               className="chev"
               width="10"
@@ -403,7 +411,7 @@ const History = () => {
           <label
             className={`filter-pill filter-pill--select history-filter history-filter--sector${selectedSector ? " filter-pill--active" : ""}`}
           >
-            <span>Sector</span>
+            <span className="filter-pill-label">{selectedSector || "Sector"}</span>
             <svg
               className="chev"
               width="10"

@@ -22,23 +22,23 @@ const SeedPlatform = () => (
 
     <div className="seedplatform-cards">
       <div className="seedplatform-card">
-        <h2 className="seedplatform-card-title">Stage Focus:</h2>
+        <h2 className="seedplatform-card-title">Stage Focus</h2>
         <p className="seedplatform-card-body">
           100% committed to your Pre-Seed and Seed journey.
         </p>
       </div>
 
       <div className="seedplatform-card">
-        <h2 className="seedplatform-card-title">First Cheque:</h2>
+        <h2 className="seedplatform-card-title">First Cheque</h2>
         <p className="seedplatform-card-body">
           High-conviction backing ranging from USD 1mn to 4mn.
         </p>
       </div>
 
       <div className="seedplatform-card">
-        <h2 className="seedplatform-card-title">Sector Preferences:</h2>
+        <h2 className="seedplatform-card-title">Sector Preferences</h2>
         <ul className="seedplatform-card-list">
-          <li>Foundational Sectors (Consumer Brands)</li>
+          <li>Foundational Sectors (Consumer)</li>
           <li>Frontier Tech (B2B AI, DeepTech, Space Tech, and Life Sciences)</li>
         </ul>
       </div>

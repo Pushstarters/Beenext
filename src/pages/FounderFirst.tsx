@@ -1,7 +1,7 @@
 const CARDS = [
   {
     title: "Execution Ready Operators",
-    body: "We back execution-ready operators who have operated at scale and possess deep sector familiarity to be able to restart from scratch",
+    body: "We back execution-ready operators who have operated at scale and possess deep sector familiarity to be able to restart from scratch.",
   },
   {
     title: "Category creators",

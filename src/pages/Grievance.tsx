@@ -34,8 +34,8 @@ const Grievance = () => (
           <h2 className="grievance-card-title">{o.title}</h2>
           <div className="grievance-card-row">
             <svg className="grievance-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <circle cx="8" cy="5" r="3.25" stroke="#6b7280" strokeWidth="1.3"/>
-              <path d="M1.5 14.5c0-3.314 2.91-6 6.5-6s6.5 2.686 6.5 6" stroke="#6b7280" strokeWidth="1.3" strokeLinecap="round"/>
+              <circle cx="8" cy="5" r="3.25" stroke="currentColor" strokeWidth="1.3"/>
+              <path d="M1.5 14.5c0-3.314 2.91-6 6.5-6s6.5 2.686 6.5 6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
             </svg>
             <div>
               <div className="grievance-label">Name</div>
@@ -44,8 +44,8 @@ const Grievance = () => (
           </div>
           <div className="grievance-card-row">
             <svg className="grievance-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <rect x="1" y="3" width="14" height="10" rx="1.5" stroke="#6b7280" strokeWidth="1.3"/>
-              <path d="M1.5 4l6.5 5 6.5-5" stroke="#6b7280" strokeWidth="1.3" strokeLinecap="round"/>
+              <rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.3"/>
+              <path d="M1.5 4l6.5 5 6.5-5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
             </svg>
             <div>
               <div className="grievance-label">Email</div>
@@ -54,7 +54,7 @@ const Grievance = () => (
           </div>
           <div className="grievance-card-row">
             <svg className="grievance-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 1.5h2.5l1 3-1.5 1a9 9 0 004.5 4.5l1-1.5 3 1V12A1.5 1.5 0 0112 13.5C6.2 13.5 2.5 9.8 2.5 4A1.5 1.5 0 014 2.5" stroke="#6b7280" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M3 1.5h2.5l1 3-1.5 1a9 9 0 004.5 4.5l1-1.5 3 1V12A1.5 1.5 0 0112 13.5C6.2 13.5 2.5 9.8 2.5 4A1.5 1.5 0 014 2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <div>
               <div className="grievance-label">Mobile</div>

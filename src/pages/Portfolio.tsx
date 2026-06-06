@@ -608,10 +608,10 @@ const portfolioItems: PortfolioItem[] = [
     cardHoverPanelBackground: "rgba(255, 255, 255, 0.12)",
     website: "https://www.hotdata.ai",
     modalTheme: {
-      header: "#5f7587",
-      panel: "#6f8799",
+      header: "#EE814F",
+      panel: "#d66f43",
       brandInk: "#ffffff",
-      textInk: "#1e3a50",
+      textInk: "#5a3023",
     },
     fallbackSummary: "Real time Query Engine for AI Agents",
     category: ["AI"],

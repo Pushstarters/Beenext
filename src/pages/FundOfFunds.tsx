@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 type FundCard = {
   title: string;
   description: string;
@@ -25,38 +23,26 @@ const fundCards: FundCard[] = [
   },
 ];
 
-const FundOfFunds = () => {
-  const navigate = useNavigate();
+const FundOfFunds = () => (
+  <div className="fof-page">
+    <section className="fof-hero">
+      <h1 className="fof-title">Bridging Asia to the West</h1>
+      <p className="fof-subtitle">
+        Building and enabling a trusted platform to support seed fund managers globally
+      </p>
+    </section>
 
-  return (
-    <div className="fof-page">
-      <button className="fof-back" type="button" onClick={() => navigate(-1)}>
-        <span className="fof-back-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </span>
-        <span>Back</span>
-      </button>
-      <section className="fof-hero">
-        <h1 className="fof-title">Bridging Asia to the West</h1>
-        <p className="fof-subtitle">
-          Building and enabling a trusted platform to support seed fund managers globally
-        </p>
-      </section>
-
-      <section className="fof-grid">
-        {fundCards.map((card) => (
-          <article className={`fof-card ${card.variant}`} key={card.title}>
-            <div className="fof-card-content">
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </div>
-          </article>
-        ))}
-      </section>
-    </div>
-  );
-};
+    <section className="fof-grid">
+      {fundCards.map((card) => (
+        <article className={`fof-card ${card.variant}`} key={card.title}>
+          <div className="fof-card-content">
+            <h3>{card.title}</h3>
+            <p>{card.description}</p>
+          </div>
+        </article>
+      ))}
+    </section>
+  </div>
+);
 
 export default FundOfFunds;

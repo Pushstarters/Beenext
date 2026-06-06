@@ -28,7 +28,7 @@ const teamMembers: TeamMember[] = [
     bullets: [
       "Alumnus, **BITS Pilani** & **Stanford GSB**",
       "Ex-strategy team at **Flipkart**, **Deep-Tech investor** at **Speciale Invest**",
-      "**GP advisor** / scout for **Makena Capital** (**USD 20B** fund of fund on Sandhill road)",
+      "**GP advisor** / scout for **Makena Capital** (**USD 20B** fund of funds on **Sand Hill Road**).",
     ],
     linkedin: "https://www.linkedin.com/in/anirudh-garg98/",
   },
