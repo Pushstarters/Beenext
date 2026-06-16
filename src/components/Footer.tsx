@@ -1,8 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const { pathname } = useLocation();
+  const footerThemeClass =
+    pathname === "/contact"
+      ? "bottom-bar--contact"
+      : pathname === "/history"
+        ? "bottom-bar--history"
+        : "";
+
   return (
-    <footer className="bottom-bar">
+    <footer className={`bottom-bar ${footerThemeClass}`.trim()}>
       <div className="bottom-left">
         <div className="label">BUSINESS ENTITIES</div>
         <Link className="footer-link" to="/fund-of-funds">
@@ -10,9 +18,11 @@ const Footer = () => {
         </Link>
       </div>
       <div className="bottom-right">
-        <button className="contact-button" type="button">
-          CONTACT US
-        </button>
+        <nav className="footer-nav">
+          <Link className="footer-nav-link" to="/disclosure">DISCLOSURE</Link>
+          <Link className="footer-nav-link" to="/grievance">GRIEVANCE</Link>
+          <Link className="footer-nav-link" to="/contact">CONTACT US</Link>
+        </nav>
         <div className="footer-copy">© 2026 BeeGlobal</div>
       </div>
     </footer>

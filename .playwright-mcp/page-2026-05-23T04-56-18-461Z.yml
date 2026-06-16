@@ -1,0 +1,70 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - link "BeeGlobal" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "BeeGlobal" [ref=e7]
+    - generic [ref=e8]:
+      - link "Ethos" [ref=e9] [cursor=pointer]:
+        - /url: /ethos
+      - link "History" [ref=e10] [cursor=pointer]:
+        - /url: /history
+      - link "Team" [ref=e11] [cursor=pointer]:
+        - /url: /team
+      - link "Community" [ref=e12] [cursor=pointer]:
+        - /url: /community
+      - link "Portfolio" [ref=e13] [cursor=pointer]:
+        - /url: /portfolio
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "The Core Team" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Our team brings together deep sector expertise, operational insight, and an unwavering commitment to backing bold founders.
+      - generic [ref=e19]:
+        - button "Anirudh Garg Anirudh Garg" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]:
+            - img "Anirudh Garg" [ref=e22]
+            - generic: Anirudh Garg
+        - button "Saksham Pant Saksham Pant" [ref=e23] [cursor=pointer]:
+          - generic [ref=e24]:
+            - img "Saksham Pant" [ref=e25]
+            - generic: Saksham Pant
+        - button "Teruhide Sato Teruhide Sato" [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]:
+            - img "Teruhide Sato" [ref=e28]
+            - generic: Teruhide Sato
+        - button "Yoshi Okubo Yoshi Okubo" [ref=e29] [cursor=pointer]:
+          - generic [ref=e30]:
+            - img "Yoshi Okubo" [ref=e31]
+            - generic: Yoshi Okubo
+        - button "Sukhmani Singh Sukhmani Singh" [ref=e32] [cursor=pointer]:
+          - generic [ref=e33]:
+            - img "Sukhmani Singh" [ref=e34]
+            - generic: Sukhmani Singh
+        - button "Devanshi Kesaria Devanshi Kesaria" [ref=e35] [cursor=pointer]:
+          - generic [ref=e36]:
+            - img "Devanshi Kesaria" [ref=e37]
+            - generic: Devanshi Kesaria
+        - button "Nupur Kedia Nupur Kedia" [ref=e38] [cursor=pointer]:
+          - generic [ref=e39]:
+            - img "Nupur Kedia" [ref=e40]
+            - generic: Nupur Kedia
+        - button "Piyush Agarwal Piyush Agarwal" [ref=e41] [cursor=pointer]:
+          - generic [ref=e42]:
+            - img "Piyush Agarwal" [ref=e43]
+            - generic: Piyush Agarwal
+      - dialog [ref=e44]:
+        - button [ref=e45] [cursor=pointer]: ×
+  - contentinfo [ref=e46]:
+    - generic [ref=e47]:
+      - generic [ref=e48]: BUSINESS ENTITIES
+      - link "Fund of Funds" [ref=e49] [cursor=pointer]:
+        - /url: /fund-of-funds
+    - generic [ref=e50]:
+      - navigation [ref=e51]:
+        - link "DISCLOSURE" [ref=e52] [cursor=pointer]:
+          - /url: /disclosure
+        - link "GRIEVANCE" [ref=e53] [cursor=pointer]:
+          - /url: /grievance
+        - link "CONTACT US" [ref=e54] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e55]: © 2026 BeeGlobal
