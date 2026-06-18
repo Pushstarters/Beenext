@@ -72,7 +72,6 @@ const toSentenceCase = (value: string) => {
 
 const splitSectorValues = (sector: string) =>
   sector
-    .replace(/\bSoftware\s*(?:\/|\band\b)\s*SaaS\b/gi, "Software, SaaS")
     .replace(/\bB2B\s*(?:\/|\band\b)\s*Manufacturing\b/gi, "B2B, Manufacturing")
     .split(",")
     .map(sentenceCase)
