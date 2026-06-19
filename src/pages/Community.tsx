@@ -199,6 +199,7 @@ const Community = () => {
           ))}
         </div>
       </section>
+
     </div>
   );
 };

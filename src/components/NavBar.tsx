@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import beeglobalLogo from "../public/beeglobal-logo.png";
 
+const CloseIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+    <path d="M2 2L16 16M16 2L2 16" stroke="#132e35" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
 const linkClass = ({ isActive }: { isActive: boolean }) =>
   isActive ? "nav-link active" : "nav-link";
 
@@ -12,6 +18,11 @@ const NavBar = () => {
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -41,6 +52,9 @@ const NavBar = () => {
         </button>
       </div>
       <div className={`nav-links ${isMenuOpen ? "is-open" : ""}`} id="main-navigation">
+        <button className="nav-close-btn" onClick={closeMenu} aria-label="Close navigation menu">
+          <CloseIcon />
+        </button>
         <NavLink className={linkClass} to="/ethos" end onClick={closeMenu}>
           Ethos
         </NavLink>
