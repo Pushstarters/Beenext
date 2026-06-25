@@ -315,7 +315,7 @@ a {
 .footer-nav-link {
   font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   letter-spacing: 0px;
   text-align: center;
@@ -399,7 +399,6 @@ a {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #132e35;
-  text-align: center;
 }
 
 .disclosure-subtitle {
@@ -571,7 +570,6 @@ a {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #132e35;
-  text-align: center;
   margin: 0;
 }
 
@@ -903,7 +901,6 @@ a {
 }
 
 .history-hero {
-  max-width: 1000px;
   margin: 0 0 0px;
 }
 
@@ -925,6 +922,7 @@ a {
   line-height: 24px;
   letter-spacing: 0px;
   color: var(--history-accent-soft);
+  text-align: center;
 }
 
 .history-filters {
@@ -1690,7 +1688,6 @@ a {
   line-height: 100%;
   letter-spacing: 0px;
   color: #132e35;
-  text-align: center;
   margin: 0 0 10px;
 }
 
@@ -3679,17 +3676,17 @@ a {
   font-size: 48px;
   line-height: 1.2;
   color: #132e35;
-  text-align: center;
   margin: 0 0 24px;
 }
 
 .ethos-body {
   font-family: 'Mona Sans';
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   color: #374151;
   margin: 0;
+  text-align: center;
 }
 
 .ethos-body strong {
@@ -3870,7 +3867,6 @@ a {
   font-size: 48px;
   line-height: 1.2;
   color: #132e35;
-  text-align: center;
   margin: 0 0 16px;
 }
 
@@ -4028,7 +4024,6 @@ a {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #132e35;
-  text-align: center;
   margin: 0 0 16px;
 }
 
@@ -4198,7 +4193,6 @@ a {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #132e35;
-  text-align: center;
   margin: 0 0 20px;
 }
 
@@ -4354,7 +4348,6 @@ a {
   font-size: 48px;
   font-weight: 400;
   color: #132e35;
-  text-align: center;
 }
 
 @media (max-width: 1024px) {
