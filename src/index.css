@@ -342,9 +342,16 @@ a {
   color: #ffffff;
 }
 
-/* Legal links (Disclosure / Grievance) live in the hamburger menu — hidden on desktop */
+/* Legal links (Disclosure / Grievance) in hamburger — hidden on desktop */
 .nav-link--legal {
   display: none;
+}
+
+/* Legal links in footer — hidden on mobile (they move to hamburger there) */
+@media (max-width: 768px) {
+  .footer-nav-link--legal {
+    display: none;
+  }
 }
 
 .footer-link {
@@ -4403,5 +4410,37 @@ a {
   .founderfirst-title {
     font-size: 24px;
     text-align: center;
+  }
+}
+
+/* ── Large-screen whitespace reduction (≥1440px) ── */
+@media (min-width: 1440px) {
+  .hero {
+    padding: 100px 300px;
+  }
+
+  .contact-hero {
+    min-height: 0;
+    padding: 80px 24px 80px;
+  }
+
+  .ethos-page {
+    min-height: 0;
+  }
+
+  .grievance-page {
+    min-height: 0;
+  }
+
+  .transpac-page {
+    min-height: 0;
+  }
+
+  .seedplatform-page {
+    min-height: 0;
+  }
+
+  .founderfirst-page {
+    min-height: 0;
   }
 }

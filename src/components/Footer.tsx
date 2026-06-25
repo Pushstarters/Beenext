@@ -18,7 +18,11 @@ const Footer = () => {
         </Link>
       </div>
       <div className="bottom-right">
-        <Link className="footer-nav-link" to="/contact">CONTACT US</Link>
+        <nav className="footer-nav">
+          <Link className="footer-nav-link footer-nav-link--legal" to="/disclosure">DISCLOSURE</Link>
+          <Link className="footer-nav-link footer-nav-link--legal" to="/grievance">GRIEVANCE</Link>
+          <Link className="footer-nav-link" to="/contact">CONTACT US</Link>
+        </nav>
         <div className="footer-copy">© 2026 BeeGlobal</div>
       </div>
     </footer>
