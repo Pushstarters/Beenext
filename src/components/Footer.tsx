@@ -18,11 +18,7 @@ const Footer = () => {
         </Link>
       </div>
       <div className="bottom-right">
-        <nav className="footer-nav">
-          <Link className="footer-nav-link" to="/disclosure">DISCLOSURE</Link>
-          <Link className="footer-nav-link" to="/grievance">GRIEVANCE</Link>
-          <Link className="footer-nav-link" to="/contact">CONTACT US</Link>
-        </nav>
+        <Link className="footer-nav-link" to="/contact">CONTACT US</Link>
         <div className="footer-copy">© 2026 BeeGlobal</div>
       </div>
     </footer>

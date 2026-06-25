@@ -545,7 +545,7 @@ const portfolioItems: PortfolioItem[] = [
     name: "Reinforce Labs",
     logo: reinforceLabsLogo,
     brandLines: ["Reinforce Labs"],
-    brandScale: 1.34,
+    brandScale: 0.82,
     modalBrandScale: 1.16,
     website: "https://www.reinforcelabs.ai",
     modalTheme: {

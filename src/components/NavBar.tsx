@@ -70,6 +70,12 @@ const NavBar = () => {
         <NavLink className={linkClass} to="/portfolio" onClick={closeMenu}>
           Portfolio
         </NavLink>
+        <NavLink className="nav-link nav-link--legal" to="/disclosure" onClick={closeMenu}>
+          Disclosure
+        </NavLink>
+        <NavLink className="nav-link nav-link--legal" to="/grievance" onClick={closeMenu}>
+          Grievance
+        </NavLink>
       </div>
     </nav>
   );

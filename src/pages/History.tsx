@@ -485,7 +485,7 @@ const History = () => {
               <div className="cell founders">{row.founders}</div>
               <div className="cell desc">{row.description}</div>
               <div className="cell year">{row.year}</div>
-              <div className="cell amount">{toSentenceCase(row.region)}</div>
+              <div className="cell amount">{row.region}</div>
               <div className="cell sector">{row.sector}</div>
             </div>
           ))}

@@ -342,6 +342,11 @@ a {
   color: #ffffff;
 }
 
+/* Legal links (Disclosure / Grievance) live in the hamburger menu — hidden on desktop */
+.nav-link--legal {
+  display: none;
+}
+
 .footer-link {
   font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 400;
@@ -394,6 +399,7 @@ a {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #132e35;
+  text-align: center;
 }
 
 .disclosure-subtitle {
@@ -564,8 +570,8 @@ a {
   font-size: 48px;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--grievance-accent);
-  max-width: 560px;
+  color: #132e35;
+  text-align: center;
   margin: 0;
 }
 
@@ -834,7 +840,6 @@ a {
   }
 
   .bottom-right {
-    width: 100%;
     justify-content: space-between;
   }
 
@@ -909,7 +914,8 @@ a {
   line-height: 100%;
   letter-spacing: 0px;
   margin: 0 0 3px;
-  color: var(--history-accent);
+  color: #132e35;
+  text-align: center;
 }
 
 .history-subtitle {
@@ -1228,7 +1234,7 @@ a {
 
 .team-title {
   font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 48px;
   line-height: 100%;
   letter-spacing: 0px;
@@ -1344,14 +1350,12 @@ a {
   line-height: 1;
   letter-spacing: 0;
   color: #ffffff;
-  background-color: #69818d;
+  background-color: transparent;
   padding: 6px 12px;
   border-radius: 4px;
-  opacity: 0;
-  transform: translateY(6px);
-  transition:
-    opacity 600ms ease,
-    transform 600ms ease;
+  opacity: 1;
+  transform: translateY(0);
+  transition: background-color 300ms ease;
   pointer-events: none;
   z-index: 2;
 }
@@ -1363,8 +1367,7 @@ a {
 
 .team-card:hover .team-photo-name,
 .team-card:focus-visible .team-photo-name {
-  opacity: 1;
-  transform: translateY(0);
+  background-color: #69818d;
 }
 
 .team-meta {
@@ -1682,11 +1685,12 @@ a {
 
 .community-title {
   font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 48px;
   line-height: 100%;
   letter-spacing: 0px;
   color: #132e35;
+  text-align: center;
   margin: 0 0 10px;
 }
 
@@ -1804,7 +1808,7 @@ a {
 
 .portfolio-title {
   font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 48px;
   line-height: 100%;
   letter-spacing: 0px;
@@ -2377,7 +2381,7 @@ a {
   display: block;
   font-family: "Mona Sans", "Segoe UI", sans-serif;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1;
   color: var(--portfolio-modal-header-text, #ffffff);
 }
@@ -2625,12 +2629,12 @@ a {
 
 .fof-title {
   font-family: "Mona Sans", "Segoe UI", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 48px;
   line-height: 100%;
   letter-spacing: 0px;
   text-align: center;
-  color: var(--fof-accent);
+  color: #132e35;
   margin: 0 0 10px;
 }
 
@@ -3045,6 +3049,10 @@ a {
     border-bottom: none;
   }
 
+  .nav-link--legal {
+    display: flex;
+  }
+
   .hero {
     padding: 72px 20px 60px;
   }
@@ -3071,34 +3079,25 @@ a {
 
   .bottom-bar {
     padding: 20px 16px;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 0;
   }
 
   .bottom-left {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .bottom-right {
-    width: 100%;
-    align-items: flex-start;
-  }
-
-  .footer-nav {
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    gap: 0;
+    align-items: flex-end;
+    gap: 10px;
   }
 
   .footer-copy {
-    width: 100%;
-    text-align: center;
+    text-align: right;
   }
 
   .contact-hero {
@@ -3243,7 +3242,7 @@ a {
   }
 
   .community-hero {
-    text-align: left;
+    text-align: center;
     margin-bottom: 16px;
   }
 
@@ -3421,13 +3420,7 @@ a {
   .community-title,
   .portfolio-title,
   .fof-title {
-    font-size: 28px !important;
-  }
-
-  .fof-title {
-    font-size: 26px;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
+    font-size: 28px;
   }
 
   .team-subtitle,
@@ -3570,7 +3563,7 @@ a {
   .history-row .cell.founders::before { content: "Founders:"; }
   .history-row .cell.amount::before  { content: "Location:"; }
   .history-row .cell.desc::before    { content: "Description:"; }
-  .history-row .cell.sector          { display: none; }
+  .history-row .cell.sector::before  { content: "Sector:"; }
 
   .history-row .year    { order: 1; }
   .history-row .company { order: 2; }
@@ -3686,6 +3679,7 @@ a {
   font-size: 48px;
   line-height: 1.2;
   color: #132e35;
+  text-align: center;
   margin: 0 0 24px;
 }
 
@@ -3873,11 +3867,11 @@ a {
 .transpac-title {
   font-family: "Mona Sans";
   font-weight: 400;
-  font-size: 40px;
+  font-size: 48px;
   line-height: 1.2;
   color: #132e35;
+  text-align: center;
   margin: 0 0 16px;
-  white-space: nowrap;
 }
 
 .transpac-subtitle {
@@ -4005,7 +3999,7 @@ a {
     font-size: 13px;
   }
   .transpac-map-inner {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -4034,6 +4028,7 @@ a {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #132e35;
+  text-align: center;
   margin: 0 0 16px;
 }
 
@@ -4149,7 +4144,7 @@ a {
   }
 
   .seedplatform-hero {
-    text-align: left;
+    text-align: center;
     padding: 16px 0 20px;
     max-width: none;
     margin: 0;
@@ -4203,6 +4198,7 @@ a {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #132e35;
+  text-align: center;
   margin: 0 0 20px;
 }
 
@@ -4338,5 +4334,81 @@ a {
 
   .founderfirst-card-body {
     font-size: 14px;
+  }
+}
+
+/* ── Unified page-title scale (overrides all per-page breakpoints above) ── */
+.hero-title,
+.disclosure-title,
+.grievance-title,
+.contact-title,
+.history-title,
+.team-title,
+.community-title,
+.portfolio-title,
+.fof-title,
+.ethos-title,
+.transpac-title,
+.seedplatform-title,
+.founderfirst-title {
+  font-size: 48px;
+  font-weight: 400;
+  color: #132e35;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .hero-title,
+  .disclosure-title,
+  .grievance-title,
+  .contact-title,
+  .history-title,
+  .team-title,
+  .community-title,
+  .portfolio-title,
+  .fof-title,
+  .ethos-title,
+  .transpac-title,
+  .seedplatform-title,
+  .founderfirst-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title,
+  .disclosure-title,
+  .grievance-title,
+  .contact-title,
+  .history-title,
+  .team-title,
+  .community-title,
+  .portfolio-title,
+  .fof-title,
+  .ethos-title,
+  .transpac-title,
+  .seedplatform-title,
+  .founderfirst-title {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title,
+  .disclosure-title,
+  .grievance-title,
+  .contact-title,
+  .history-title,
+  .team-title,
+  .community-title,
+  .portfolio-title,
+  .fof-title,
+  .ethos-title,
+  .transpac-title,
+  .seedplatform-title,
+  .founderfirst-title {
+    font-size: 24px;
+    text-align: center;
   }
 }
