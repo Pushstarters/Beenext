@@ -3,6 +3,7 @@ import { type CSSProperties, useState } from "react";
 import portfolioDetailsCsv from "../data/portfolio-details.csv?raw";
 import aixiriumLogo from "../public/portfolio/axirium-rmbg-2026.png";
 import budyLogo from "../public/portfolio/budy.svg";
+import crestLogo from "../public/portfolio/crest-new.png";
 import defendermateLogo from "../public/portfolio/defendermate.avif";
 import elevnLogo from "../public/portfolio/elevn-rmbg-2026.png";
 import firstCoffeeLogo from "../public/portfolio/first-coffee-rmbg-2026.png";
@@ -389,6 +390,8 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     name: "Crest",
+    logo: crestLogo,
+    website: "https://www.crest-capital.com/",
     brandScale: 1.24,
     modalBrandScale: 1.22,
     modalTheme: {
